@@ -1,0 +1,186 @@
+:root {
+    --primary: #1B4DFF;
+    --text: #333333;
+    --muted: #f0f0f0;
+}
+
+/* ==========================
+   Service Page Styles
+   Extracted from service.blade.php
+   ========================== */
+
+/* HERO */
+.service-hero {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+
+.service-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+}
+
+.service-overlay h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.service-overlay p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* CONTENT WRAPPER */
+.service-section {
+    width: 100%;
+    padding: 60px 100px;
+}
+
+/* SECTION GENERAL */
+.section-box {
+    margin-bottom: 100px;
+}
+
+.section-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* LEFT / IMAGE */
+.left-content { flex: 1; }
+.section-image { margin-top: 30px; }
+.section-image img { width: 420px; max-width: 100%; }
+
+/* TEXT RIGHT */
+.text-content { flex: 1; }
+
+/* ICON GROUP (used in sections 1 and 3) */
+.icon-group,
+.icon-group-section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    margin-left: 40px;
+    position: relative;
+}
+
+.icon-row-top,
+.icon-row-top-section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 55px;
+}
+
+.icon-row-top img,
+.icon-row-top-section3 img,
+.icon-bottom img,
+.icon-bottom-section3 img,
+.bottom-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.icon-bottom,
+.icon-bottom-section3 { position: relative; margin: 0; }
+
+/* SECTION-SPECIFIC LAYOUT HELPERS */
+.section-box:nth-child(1) .section-row,
+.section-box:nth-child(3) .section-row { display: flex; }
+
+.section-box:nth-child(2) .section-row,
+.section-box:nth-child(4) .section-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.section-box:nth-child(2) .section-image,
+.section-box:nth-child(4) .section-image {
+    flex: 0 0 auto;
+}
+
+.section-box:nth-child(2) .section-image img,
+.section-box:nth-child(4) .section-image img { width: 420px; max-width: 100%; }
+
+/* BOTTOM ICON */
+.bottom-icon-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px solid var(--muted);
+}
+
+/* WHY DISPLY SECTION */
+.why-disply-section { width: 100%; padding: 80px 100px; background-color: #fff; }
+
+.why-disply-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-disply-image { flex: 0 0 auto; width: 420px; }
+.why-disply-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.why-disply-list-container { flex: 1; }
+.why-disply-title { font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 40px; }
+
+.why-disply-list { width: 100%; }
+.why-disply-item { display: flex; align-items: flex-start; margin-bottom: 25px; gap: 15px; }
+.why-disply-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+.why-disply-text { font-size: 18px; line-height: 1.6; color: var(--text); font-weight: 500; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .why-disply-content { flex-direction: column; align-items: center; text-align: center; }
+    .why-disply-image { width: 100%; max-width: 500px; margin-bottom: 40px; }
+    .why-disply-item { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .service-section,
+    .why-disply-section { padding: 40px 20px; }
+    .why-disply-text { font-size: 16px; }
+    .service-overlay h1 { font-size: 28px; }
+}
