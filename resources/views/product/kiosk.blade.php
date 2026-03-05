@@ -1,8 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
 <style>
-                .about-hero {
+    /* IMPOR FONT INTER */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    /* APLIKASI FONT INTER KE SEMUA ELEMEN */
+    body, .about-content h1, .about-content p, .btn-demo,
+    .kiosk-text h2, .kiosk-text p, .kiosk-feature-container .sub-title,
+    .kiosk-feature-container .main-title, .kiosk-usage-title,
+    .product-spec-container h4, .product-spec-container h2,
+    .product-switch button {
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    .about-hero {
         position: relative;
         width: 100%;
         height: 380px;
@@ -21,14 +33,15 @@
     }
 
     .about-content h1 {
-        font-size: 36px;
+        font-size: 45px; /* DARI 36px KE 40px */
         line-height: 1.3;
         margin-bottom: 16px;
-        font-weight: bold;
+        font-weight: 700;
+        letter-spacing: -0.5px;
     }
 
     .about-content p {
-        font-size: 16px;
+        font-size: 25px; /* DARI 16px KE 18px */
         line-height: 1.7;
         margin-bottom: 24px;
         color: #e6ecff;
@@ -45,7 +58,7 @@
     padding: 14px 34px;
     border-radius: 50px;
 
-    font-weight: 700;
+    font-weight: 600; /* DARI 700 KE 600 (LEBIH LEMBUT) */
     font-size: 16px;
     text-decoration: none;
 
@@ -77,7 +90,7 @@
         }
 
         .about-content h1 {
-            font-size: 28px;
+            font-size: 32px;
         }
     }
 
@@ -111,14 +124,16 @@
 
 /* TEXT */
 .kiosk-text h2 {
-    font-size: 36px;
-    font-weight: 800;
+    font-size: 38px; /* DARI 36px KE 38px */
+    font-weight: 700; /* DARI 800 KE 700 */
     color: #193295;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 .kiosk-text p {
-    font-size: 16px;
+    font-size: 18px; /* DARI 16px KE 18px */
     line-height: 1.8;
     color: #1f2b3d;
     margin-bottom: 16px;
@@ -176,38 +191,49 @@
 }
 
 .kiosk-feature-container {
-    max-width: 520px;
+    max-width: 1100px; /* DARI 520px KE 1100px (LEBIH LEBAR) */
     margin: auto;
     text-align: center;
 }
 
 .kiosk-feature-container .sub-title {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 16px; /* DARI 14px KE 16px */
+    font-weight: 600; /* DARI 700 KE 600 */
     letter-spacing: 1px;
-    color: #6b7cff;
-    margin-bottom: 6px;
+    color: #1e40af; /* DARI #6b7cff KE #1e40af */
+    margin-bottom: 10px; /* DARI 6px KE 10px */
 }
 
 .kiosk-feature-container .main-title {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 32px; /* DARI 28px KE 32px */
+    font-weight: 700; /* DARI 800 KE 700 */
     color: #193295;
     margin-bottom: 50px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
 }
 
-/* IMAGE LIST */
+/* =========== LAYOUT 2 KOLOM SEPERTI IWB =========== */
 .kiosk-feature-images {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 KOLOM */
+    gap: 30px;
+    align-items: start;
 }
 
 .kiosk-feature-images img {
     width: 100%;
-    max-width: 420px;
+    max-width: 500px; /* DARI 420px KE 500px */
     margin: auto;
     display: block;
+}
+
+/* Responsive untuk layout 2 kolom */
+@media (max-width: 768px) {
+    .kiosk-feature-images {
+        grid-template-columns: 1fr; /* DI MOBILE JADI 1 KOLOM */
+        gap: 30px;
+    }
 }
 
 /* =========================
@@ -225,10 +251,12 @@
 
 .kiosk-usage-title {
     text-align: center;
-    font-size: 34px;
-    font-weight: 800;
+    font-size: 36px; /* DARI 34px KE 36px */
+    font-weight: 700; /* DARI 800 KE 700 */
     color: #000;
     margin-bottom: 60px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
 }
 
 .kiosk-usage-title span {
@@ -249,7 +277,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px; /* ← DIPERKECIL DARI 26px */
 }
-
 
 .kiosk-usage-icons img {
     width: 100%;
@@ -285,50 +312,54 @@
    PRODUCT SPEC SECTION
 ========================= */
 .product-spec-section {
-    padding: 60px 20px 80px; /* <<< DIKECILIN */
+    padding: 60px 20px 80px;
     background: linear-gradient(180deg, #f4f7ff 0%, #ffffff 100%);
 }
 
 .product-spec-container {
-    max-width: 1080px; /* <<< DIKERUCUTIN */
+    max-width: 1080px;
     margin: auto;
     text-align: center;
 }
 
 /* HEADER */
 .product-spec-container h4 {
-    font-size: 13px;
+    font-size: 15px; /* DARI 13px KE 15px */
     font-weight: 600;
     color: #1e40af;
-    margin-bottom: 4px;
+    margin-bottom: 6px; /* DARI 4px KE 6px */
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .product-spec-container h2 {
-    font-size: 26px; /* <<< DIKECILIN */
-    font-weight: 800;
+    font-size: 32px; /* DARI 26px KE 32px */
+    font-weight: 700; /* DARI 800 KE 700 */
     color: #000;
     margin-bottom: 18px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
 }
 
 /* SWITCH BUTTON */
 .product-switch {
     display: flex;
     justify-content: center;
-    gap: 10px; /* <<< DIRAPETIN */
+    gap: 10px;
     margin-bottom: 26px;
 }
 
 .product-switch button {
-    padding: 8px 18px; /* <<< LEBIH KECIL */
+    padding: 10px 22px; /* DARI 8px 18px KE 10px 22px */
     border-radius: 999px;
     border: 1.5px solid #1e40af;
     background: #fff;
     color: #1e40af;
-    font-size: 13px;
+    font-size: 14px; /* DARI 13px KE 14px */
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
+    font-family: 'Inter', sans-serif;
 }
 
 .product-switch button.active {
@@ -336,10 +367,15 @@
     color: #fff;
 }
 
+.product-switch button:hover {
+    background: #1e40af;
+    color: #fff;
+}
+
 /* IMAGE WRAPPER */
 .product-spec-image-wrapper {
     position: relative;
-    max-width: 860px; /* <<< INI PENTING, BIKIN GA GEDE */
+    max-width: 860px;
     margin: auto;
 }
 
@@ -352,20 +388,17 @@
 /* DOWNLOAD PDF CLICK AREA */
 .download-pdf-area {
     position: absolute;
-
     bottom: 22px;
     left: 22px;
-
-    width: 170px;   /* <<< DIKECILIN */
+    width: 170px;
     height: 42px;
-
     cursor: pointer;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .product-spec-container h2 {
-        font-size: 22px;
+        font-size: 28px; /* DARI 22px KE 28px */
     }
 
     .product-switch {
@@ -374,12 +407,20 @@
     }
 
     .product-switch button {
-        font-size: 12px;
-        padding: 7px 16px;
+        font-size: 13px; /* DARI 12px KE 13px */
+        padding: 9px 18px; /* DARI 7px 16px KE 9px 18px */
     }
 
     .product-spec-image-wrapper {
         max-width: 100%;
+    }
+    
+    .kiosk-usage-title {
+        font-size: 32px;
+    }
+    
+    .kiosk-feature-container .main-title {
+        font-size: 28px;
     }
 }
 
@@ -445,11 +486,19 @@
         <div class="sub-title">FITUR UNGGULAN</div>
         <div class="main-title">DISPLY SMART KIOSK</div>
 
+        <!-- =========== LAYOUT 2 KOLOM SEPERTI IWB =========== -->
         <div class="kiosk-feature-images">
-            <img src="{{ asset('images/Product/Kiosk/image7.png') }}" alt="">
-            <img src="{{ asset('images/Product/Kiosk/image8.png') }}" alt="">
-            <img src="{{ asset('images/Product/Kiosk/image9.png') }}" alt="">
-            <img src="{{ asset('images/Product/Kiosk/image10.png') }}" alt="">
+            <!-- KOLOM KIRI -->
+            <div>
+                <img src="{{ asset('images/Product/Kiosk/image7.png') }}" alt="">
+                <img src="{{ asset('images/Product/Kiosk/image8.png') }}" alt="">
+            </div>
+            
+            <!-- KOLOM KANAN -->
+            <div>
+                <img src="{{ asset('images/Product/Kiosk/image9.png') }}" alt="">
+                <img src="{{ asset('images/Product/Kiosk/image10.png') }}" alt="">
+            </div>
         </div>
 
     </div>
@@ -511,7 +560,7 @@
             <!-- DOWNLOAD PDF -->
             <a
                 id="downloadPdf"
-                href="{{ asset('pdf/Malika, Restu, Tiara.pdf') }}"
+                href="{{ asset('pdf/BrosurKiosk.pdf') }}"
                 class="download-pdf-area"
                 download="kiosk-floor-stand.pdf"
             ></a>

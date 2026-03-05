@@ -1,8 +1,17 @@
-@extends('layouts.app')
-
+@extends('layouts.frontend')
 @section('content')
 
 <style>
+    /* IMPOR FONT INTER */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    /* APLIKASI FONT INTER KE SEMUA ELEMEN */
+    body, .about-content h1, .about-content p, .btn-demo,
+    .signage-content h2, .signage-content p, .signage-feature-only h2,
+    .signage-usage h2, .product-spec-container h4, .product-spec-container h2 {
+        font-family: 'Inter', sans-serif !important;
+    }
+
 .about-hero {
     position: relative;
     width: 100%;
@@ -22,14 +31,15 @@
 }
 
 .about-content h1 {
-    font-size: 36px;
+    font-size: 40px; /* DARI 36px KE 40px */
     line-height: 1.3;
     margin-bottom: 16px;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .about-content p {
-    font-size: 16px;
+    font-size: 20px; /* DARI 16px KE 18px */
     line-height: 1.7;
     margin-bottom: 24px;
     color: #e6ecff;
@@ -71,7 +81,7 @@
         padding: 40px 24px;
     }
     .about-content h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 }
 
@@ -97,7 +107,7 @@
 
 .signage-image img {
     width: 100%;
-    max-width: 280px;
+    max-width: 320px; /* DARI 280px KE 320px */
 }
 
 .signage-content {
@@ -105,22 +115,23 @@
 }
 
 .signage-content h2 {
-    font-size: 32px;
+    font-size: 36px; /* DARI 32px KE 36px */
     font-weight: 700;
     color: #0d2d8c;
     margin-bottom: 22px;
     line-height: 1.3;
+    letter-spacing: -0.5px;
 }
 
 .signage-content p {
-    font-size: 16px;
+    font-size: 18px; /* DARI 16px KE 18px */
     line-height: 1.7;
     color: #444;
     margin-bottom: 18px;
     font-weight: 400;
 }
 
-/* 4 ICON - DI BESARIN */
+/* 4 ICON */
 .signage-icons {
     display: flex;
     gap: 24px;
@@ -151,37 +162,46 @@
 }
 
 .signage-feature-only h2 {
-    font-size: 28px;
+    font-size: 32px; /* DARI 28px KE 32px */
     font-weight: 700;
     color: #111;
     margin-bottom: 50px;
     line-height: 1.4;
+    letter-spacing: -0.5px;
 }
 
 .signage-feature-only h2 span {
     color: #0d2d8c;
 }
 
+/* =========== LAYOUT 2 KOLOM SEPERTI DI HALAMAN SEBELUMNYA =========== */
 .feature-image-list {
-    max-width: 900px;
+    max-width: 1100px; /* DARI 900px KE 1100px */
     margin: auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 KOLOM */
     gap: 30px;
+    align-items: start;
 }
 
-/* GAMBAR 7-10 - DISAMAKAN UKURANNYA */
+/* GAMBAR 7-10 */
 .feature-image-list img {
     width: 100%;
-    max-width: 500px;
+    max-width: 500px; /* TETAP 500px */
     height: auto;
     margin: 0 auto;
     display: block;
 }
 
+/* Responsive untuk layout 2 kolom */
 @media (max-width: 768px) {
     .signage-feature-only h2 {
-        font-size: 24px;
+        font-size: 28px; /* DARI 24px KE 28px */
+    }
+    
+    .feature-image-list {
+        grid-template-columns: 1fr; /* DI MOBILE JADI 1 KOLOM */
+        gap: 30px;
     }
 }
 
@@ -193,10 +213,11 @@
 
 .signage-usage h2 {
     text-align: center;
-    font-size: 28px;
+    font-size: 36px; /* DARI 28px KE 36px */
     font-weight: 700;
     margin-bottom: 60px;
     line-height: 1.3;
+    letter-spacing: -0.5px;
 }
 
 .signage-usage h2 span {
@@ -219,10 +240,10 @@
     gap: 24px;
 }
 
-/* GAMBAR 11-16 - DISAMAKAN UKURANNYA */
+/* GAMBAR 11-16 */
 .usage-images img {
     width: 100%;
-    max-width: 240px;
+    max-width: 260px; /* DARI 240px KE 260px */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -235,7 +256,7 @@
 
 .usage-tv img {
     width: 100%;
-    max-width: 340px;
+    max-width: 380px; /* DARI 340px KE 380px */
 }
 
 @media (max-width: 768px) {
@@ -245,6 +266,60 @@
     }
     .usage-images {
         justify-items: center;
+    }
+    
+    .signage-usage h2 {
+        font-size: 32px;
+    }
+}
+
+.signage-extra-full {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.signage-extra-full img {
+    width: 100%;
+    height: auto; /* ini penting biar proporsi aman */
+    display: block;
+}
+
+/* TEXT DI ATAS GAMBAR */
+.signage-extra-overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    color: #ffffff;
+}
+
+.signage-extra-overlay h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.signage-extra-overlay p {
+    font-size: 18px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+.signage-extra-overlay li {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .signage-extra-overlay {
+        position: static;
+        transform: none;
+        padding: 40px 24px;
+        color: #111;
+        background: #fff;
     }
 }
 
@@ -261,19 +336,21 @@
 }
 
 .product-spec-container h4 {
-    font-size: 14px;
+    font-size: 16px; /* DARI 14px KE 16px */
     font-weight: 600;
     color: #1e40af;
-    margin-bottom: 6px;
+    margin-bottom: 10px; /* DARI 6px KE 10px */
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .product-spec-container h2 {
-    font-size: 28px;
+    font-size: 32px; /* DARI 28px KE 32px */
     font-weight: 700;
     color: #000;
     margin-bottom: 26px;
     line-height: 1.3;
+    letter-spacing: -0.5px;
 }
 
 .product-spec-badge {
@@ -312,7 +389,7 @@
 }
 
 .product-brochure p {
-    font-size: 14px;
+    font-size: 15px; /* DARI 14px KE 15px */
     margin-bottom: 8px;
     font-weight: 400;
 }
@@ -331,7 +408,7 @@
 }
 
 .product-spec-right h3 {
-    font-size: 20px;
+    font-size: 22px; /* DARI 20px KE 22px */
     font-weight: 700;
     color: #000;
     margin-bottom: 14px;
@@ -339,7 +416,7 @@
 }
 
 .product-spec-right p {
-    font-size: 15px;
+    font-size: 16px; /* DARI 15px KE 16px */
     line-height: 1.6;
     margin-bottom: 24px;
     color: #1f2b3d;
@@ -353,14 +430,14 @@
 }
 
 .product-spec-item {
-    font-size: 14px;
+    font-size: 15px; /* DARI 14px KE 15px */
     font-weight: 400;
 }
 
 .product-spec-item span {
     display: block;
     color: #64748b;
-    font-size: 13px;
+    font-size: 14px; /* DARI 13px KE 14px */
     font-weight: 400;
 }
 
@@ -399,8 +476,7 @@
 <section class="about-hero">
     <div class="about-content">
         <h1>
-            DISPLY Interactive<br>
-            Signage
+            DISPLY Interactive Signage
         </h1>
 
         <p>
@@ -436,7 +512,7 @@
 
             <!-- 4 IMAGE (TANPA TEKS) -->
             <div class="signage-icons">
-                <img src="{{ asset('images/Product/Signage/image3.png') }}" alt="">
+                <img src="{{ asset('images/Product/Signage/image3.png') }}" alt=""> 
                 <img src="{{ asset('images/Product/Signage/image4.png') }}" alt="">
                 <img src="{{ asset('images/Product/Signage/image5.png') }}" alt="">
                 <img src="{{ asset('images/Product/Signage/image6.png') }}" alt="">
@@ -451,11 +527,19 @@
         <span>DISPLY DIGITAL SIGNAGE</span>
     </h2>
 
+    <!-- =========== LAYOUT 2 KOLOM SEPERTI HALAMAN SEBELUMNYA =========== -->
     <div class="feature-image-list">
-        <img src="{{ asset('images/Product/Signage/image7.png') }}" alt="">
-        <img src="{{ asset('images/Product/Signage/image8.png') }}" alt="">
-        <img src="{{ asset('images/Product/Signage/image9.png') }}" alt="">
-        <img src="{{ asset('images/Product/Signage/image10.png') }}" alt="">
+        <!-- KOLOM KIRI -->
+        <div>
+            <img src="{{ asset('images/Product/Signage/image7.png') }}" alt="">
+            <img src="{{ asset('images/Product/Signage/image8.png') }}" alt="">
+        </div>
+        
+        <!-- KOLOM KANAN -->
+        <div>
+            <img src="{{ asset('images/Product/Signage/image9.png') }}" alt="">
+            <img src="{{ asset('images/Product/Signage/image10.png') }}" alt="">
+        </div>
     </div>
 </section>
 
@@ -480,6 +564,30 @@
     </div>
 </section>
 
+<section class="signage-extra-full">
+    <img src="{{ asset('images/Product/Signage/image18.png') }}" 
+         alt="Digital Human DISPLY">
+
+    <div class="signage-extra-overlay">
+        <h2>
+            Hadirkan Digital Human Interaktif di Setiap<br>
+            Layar <span>DISPLY</span>
+        </h2>
+
+        <p>
+            Tambahkan fitur Digital Human untuk menghadirkan komunikasi
+            yang lebih interaktif dan responsif langsung dari layar signage Anda.
+        </p>
+
+        <ul>
+            <li>Real-time Interaction</li>
+            <li>Natural Voice & Expression</li>
+            <li>Customizable sesuai identitas brand</li>
+            <li>AI Powered Smart Response</li>
+        </ul>
+    </div>
+</section>
+
 <section class="product-spec-section">
     <div class="product-spec-container">
         <h4>JELAJAHI PRODUCT</h4>
@@ -494,7 +602,7 @@
 
             <!-- AREA KLIK DOWNLOAD PDF -->
             <a 
-                href="{{ asset('pdf/nurmalika.pdf') }}" 
+                href="{{ asset('pdf/BrosurDigitalSignage.pdf') }}" 
                 class="download-pdf-area"
                 download
             ></a>

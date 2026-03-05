@@ -15,19 +15,39 @@
     gap: 40px;
 }
 
+/* ===== BRAND SECTION - LOGO & TEKS RAPAT ===== */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    margin-bottom: -15px; /* NAIKIN TEKS DENGAN NEGATIVE MARGIN */
+    position: relative;
+    z-index: 2;
+}
+
 .footer-logo img {
-    height: 80px;
-    margin-bottom: 20px;
+    height: 100px;
+    margin-left: -25px; /* geser ke kiri */
 }
 
 .footer-desc {
-    line-height: 1.7;
+    line-height: 1.6; /* sedikit dikurangin biar rapat */
     color: #1e40af;
-    margin-bottom: 14px;
+    margin-top: 0; /* HAPUS MARGIN ATAS */
+    margin-bottom: 8px; /* kecilin jarak antar paragraf */
+    position: relative;
+    z-index: 1;
+}
+
+/* Paragraf pertama lebih rapat ke logo */
+.footer-desc.first-desc {
+    margin-top: 7px; /* NAIKIN LEBIH DEKET KE LOGO */
 }
 
 .footer-title {
-    font-weight: 700;
+    font-weight: 900;
     margin-bottom: 14px;
 }
 
@@ -42,66 +62,36 @@
     text-decoration: underline;
 }
 
-/* ===== DIVIDER WRAP ===== */
-.footer-divider-wrap {
-    max-width: 1300px;
-    margin: 50px auto 20px;
-    position: relative;
-}
-
-/* garis */
+/* ===== DIVIDER & SOCIAL ===== */
 .footer-line {
     max-width: 1300px;
     margin: 0 auto;
     border-top: 1px solid #b6c4ff;
 }
 
-/* icon di tengah antara 2 garis */
 .footer-social {
     max-width: 1300px;
     margin: 14px auto;
     display: flex;
     gap: 18px;
     align-items: center;
-    padding-left: 0; /* sejajar konten kiri */
+    padding-left: 0;
 }
 
 .footer-social img {
     height: 22px;
+    transition: opacity 0.2s;
 }
 
-/* copyright tengah bawah */
+.footer-social a:hover img {
+    opacity: 0.8;
+}
+
 .footer-copy {
     text-align: center;
     font-size: 13px;
     color: #1e40af;
     margin-top: 18px;
-}
-
-
-/* ===== BOTTOM ===== */
-.footer-bottom {
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 16px;
-}
-
-.footer-social img {
-    height: 22px;
-}
-
-.footer-copy {
-    font-size: 13px;
-    color: #1e40af;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -119,11 +109,6 @@
     .footer-top {
         grid-template-columns: 1fr;
     }
-
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
 </style>
 
@@ -132,13 +117,13 @@
     <!-- TOP -->
     <div class="footer-top">
 
-        <!-- BRAND -->
-        <div>
+        <!-- BRAND - LOGO & TEKS RAPAT -->
+        <div class="footer-brand">
             <div class="footer-logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Disply Logo">
             </div>
 
-            <p class="footer-desc">
+            <p class="footer-desc first-desc">
                 Disply adalah brand solusi digital display & perangkat interaktif
                 yang digunakan untuk kebutuhan presentasi, informasi publik,
                 dan layanan digital di berbagai sektor.
@@ -156,6 +141,7 @@
             <div class="footer-links">
                 <a href="/">Home</a>
                 <a href="/about">About Us</a>
+                <a href="/usecase">Use Case</a>
                 <a href="/service">Service</a>
                 <a href="/blog">Blog</a>
                 <a href="/contact">Contact</a>
@@ -167,9 +153,9 @@
         <div>
             <div class="footer-title">Products</div>
             <div class="footer-links">
-                <a href="#">Smart Kiosk</a>
-                <a href="#">IR Whiteboard</a>
+                <a href="#">Interactive Whiteboard</a>
                 <a href="#">Digital Signage</a>
+                <a href="#">Smart Kiosk</a>
             </div>
         </div>
 
@@ -184,32 +170,28 @@
 
     </div>
 
-<!-- GARIS ATAS -->
-<div class="footer-line"></div>
+    <!-- GARIS ATAS -->
+    <div class="footer-line"></div>
 
-<!-- ICON (DI TENGAH ANTARA 2 GARIS, POSISI KIRI) -->
-<div class="footer-social">
-    <a href="https://www.linkedin.com/in/nur-malika-adelia-7b9891321/" target="_blank" rel="noopener">
-        <img src="{{ asset('images/IN.png') }}" alt="LinkedIn">
-    </a>
+    <!-- ICON SOCIAL -->
+    <div class="footer-social">
+        <a href="https://www.linkedin.com/in/nur-malika-adelia-7b9891321/" target="_blank" rel="noopener">
+            <img src="{{ asset('images/IN.png') }}" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/mi.moyyy/" target="_blank" rel="noopener">
+            <img src="{{ asset('images/IG.png') }}" alt="Instagram">
+        </a>
+        <a href="https://wa.me/6287865000432" target="_blank" rel="noopener">
+            <img src="{{ asset('images/WA.png') }}" alt="WhatsApp">
+        </a>
+    </div>
 
-    <a href="https://www.instagram.com/mi.moyyy/" target="_blank" rel="noopener">
-        <img src="{{ asset('images/IG.png') }}" alt="Instagram">
-    </a>
+    <!-- GARIS BAWAH -->
+    <div class="footer-line"></div>
 
-    <a href="https://wa.me/6281804113951" target="_blank" rel="noopener">
-        <img src="{{ asset('images/WA.png') }}" alt="WhatsApp">
-    </a>
-</div>
-
-
-<!-- GARIS BAWAH -->
-<div class="footer-line"></div>
-
-<!-- COPYRIGHT TENGAH -->
-<div class="footer-copy">
-    © 2025 Disply. All rights reserved.
-</div>
-
+    <!-- COPYRIGHT -->
+    <div class="footer-copy">
+        © 2025 Disply. All rights reserved.
+    </div>
 
 </footer>

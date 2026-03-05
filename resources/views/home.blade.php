@@ -1,22 +1,74 @@
-@extends('layouts.app')
-
+@extends('layouts.frontend')
 @section('content')
 <style>
-    .hero-container {
+
+/* ===== GOOGLE FONTS INTER ===== */  
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== GLOBAL FONT SETTINGS ===== */
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.4;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== TEXT EFFECT SECTION ===== */
+.text-effect-container {
+    margin: 30px auto 20px; /* DIKURANGI LAGI */
+    max-width: 1200px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.text-effect-title {
+    font-size: 64px; /* DIKURANGI LAGI */
+    font-weight: 600;
+    background: linear-gradient(135deg, #2d6cdf 0%, #0d2d8c 50%, #1669F2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin: 0;
+    line-height: 1.1;
+    font-family: 'Inter', sans-serif;
+}
+
+.text-effect-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px; /* DIKURANGI LAGI */
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-container {
     position: relative;
-    width: 100vw;       /* full layar */
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw; /* hapus padding container */
-    margin-right: -50vw;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .hero-bg {
     width: 100%;
     height: auto;
     object-fit: cover;
+    display: block;
 }
-
 
 .hero-overlay {
     position: absolute;
@@ -26,38 +78,76 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 80px; /* posisi teks dari kiri */
+    padding-left: 80px;
     color: white;
 }
 
 .hero-text-box {
-    max-width: 550px;
+    max-width: 700px;
 }
 
 .hero-text-box h1 {
-    font-size: 42px;
-    font-weight: 700;
+    font-size: 44px;
+    font-weight: 600;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .hero-text-box p {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
     line-height: 1.5;
     opacity: 0.95;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif;
 }
 
+/* ===== BUTTON JADWALKAN DEMO ===== */
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #f6f9ff 0%, #e4ecff 100%);
+    color: #0d2d8c;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.25s ease;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
+}
 
+.hero-button::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #0d2d8c;
+    margin-left: 6px;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
 
 /* ===== FEATURE SECTION ===== */
 .feature-section {
     width: 100%;
-    margin: 40px auto;
+    margin: 25px auto 15px;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .feature-box {
@@ -73,49 +163,72 @@
 
 .feature-box img {
     width: 48px;
+    height: auto;
 }
 
 .feature-box h3 {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     margin: 0;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
 }
 
 .feature-box p {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400;
     margin: 2px 0 0;
     opacity: 0.7;
+    font-family: 'Inter', sans-serif;
 }
 
-/* PRODUCT SECTION */
+/* ===== PRODUCT SECTION ===== */
 .product-section {
-    margin-top: 60px;
+    margin-top: 50px;
     text-align: center;
+    padding: 0 20px;
 }
 
 .product-header h4 {
-    color: #2d6cdf;
-    font-weight: 700;
+    color: #2448C3;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
 }
 
 .product-header h2 {
-    font-size: 26px;
-    font-weight: 800;
-    margin-top: 8px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
 }
 
 .product-header p {
     max-width: 600px;
-    margin: 10px auto 35px;
+    margin: 0 auto 35px;
     opacity: 0.8;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
 }
 
 /* ===== CAROUSEL ===== */
 .carousel-container {
     position: relative;
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    overflow: hidden;   /* tetap diperlukan biar item tidak keluar */
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .carousel-slide {
@@ -128,200 +241,192 @@
     min-width: 100%;
 }
 
-/* === FIX UTAMA: gambar pakai height auto (rasio asli) === */
 .carousel-item img {
     width: 100%;
-    height: auto;      /* <— tidak akan pernah jadi oval lagi */
-    display: block;    /* hilangkan space tambahan */
-    object-fit: contain; /* boleh diganti cover kalau mau cropping */
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
 }
 
-/* ===== TEKS DI ATAS TENGAH ===== */
+/* ===== CAROUSEL OVERLAY ===== */
 .carousel-overlay {
     position: absolute;
-    top: 25px;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
-
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
     justify-content: flex-start;
-
     text-align: center;
     color: white;
-    pointer-events: none; /* biar tidak ganggu tombol panah */
+    pointer-events: none;
+    padding: 0 20px;
 }
 
 .carousel-overlay h3 {
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-shadow: 0px 2px 10px rgba(0,0,0,0.7); /* biar jelas */
+    font-size: 36px;n
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    max-width: 800px;
+    font-family: 'Inter', sans-serif;
 }
 
 .readmore-btn {
-    pointer-events: auto; /* aktifkan tombol */
+    pointer-events: auto;
     background: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
     text-decoration: none;
     color: #2d6cdf;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* ===== CAROUSEL DOTS (TITIK-TITIK) ===== */
+.readmore-btn::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid #2d6cdf;
+    transition: transform 0.3s ease;
+}
+
+.readmore-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.3);
+    background: #f8f9fa;
+}
+
+.readmore-btn:hover::after {
+    transform: translateX(4px);
+}
+
+/* ===== CAROUSEL DOTS ===== */
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 8px; /* Perkecil jarak antar titik */
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 15px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
 }
 
 .carousel-dot {
-    width: 6px; /* Perkecil ukuran titik */
-    height: 6px; /* Perkecil ukuran titik */
-    background-color: white; /* Warna lebih transparan */
-    border-radius: 50%; /* Pastikan bulat sempurna */
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .carousel-dot.active {
-    background-color: #2d6cdf; /* Warna aktif lebih solid */
-    transform: scale(1.2); /* Sedikit lebih besar saat aktif */
+    background-color: white;
+    transform: scale(1.3);
 }
 
-/* ===== TRANSPARENT ARROWS (BULAT SEMPURNA) ===== */
+/* ===== CAROUSEL ARROWS ===== */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.20); 
+    background: rgba(255,255,255,0.25);
     border: none;
-    font-size: 20px; /* Sedikit perkecil font */
-    width: 40px; /* Lebar tetap untuk bulat sempurna */
-    height: 40px; /* Tinggi tetap untuk bulat sempurna */
-    padding: 0; /* Hapus padding, ganti dengan flex */
-    border-radius: 50%; /* 50% untuk bulat sempurna */
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
     color: white;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
     z-index: 10;
-    display: flex; /* Untuk alignment panah */
-    align-items: center; /* Vertikal center */
-    justify-content: center; /* Horizontal center */
-    line-height: 1; /* Untuk alignment teks */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    font-family: 'Inter', sans-serif;
 }
 
 .carousel-btn:hover {
     background: rgba(255,255,255,0.35);
+    transform: translateY(-50%) scale(1.1);
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+.prev { left: 20px; }
+.next { right: 20px; }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .carousel-container {
-        width: 95%; /* Lebih lebar di mobile */
-    }
-    
-    .carousel-btn {
-        width: 36px; /* Sedikit lebih kecil di mobile */
-        height: 36px;
-        font-size: 18px;
-    }
-    
-    .carousel-overlay h3 {
-        font-size: 22px; /* Perkecil teks di mobile */
-    }
-    
-    .readmore-btn {
-        padding: 6px 14px;
-        font-size: 12px;
-    }
-    
-    .carousel-dot {
-        width: 5px;
-        height: 5px;
-    }
-}
-
-/* ===== INDUSTRY SECTION (NO CARD) ===== */
+/* ===== INDUSTRY SECTION ===== */
 .industry-section {
-    margin: 60px auto;
+    margin: 50px auto;
     max-width: 1100px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 1 baris 4 */
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
     padding: 0 20px;
     align-items: center;
     justify-items: center;
 }
 
-/* IMAGE ONLY */
 .industry-section img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    display: block;
 }
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .industry-section {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .industry-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .industry-section {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* ===== NEWS SECTION ===== */
 .news-section {
-    margin-top: 90px;
-    padding: 40px 20px 100px;
+    margin-top: 60px;
+    padding: 25px 20px 70px;
     position: relative;
     text-align: center;
 }
 
-/* Header Text */
 .news-header h4 {
     color: #2d6cdf;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family: 'Inter', sans-serif;
 }
 
 .news-header h2 {
-    font-size: 26px;
-    font-weight: 800;
+    font-size: 32px;
+    font-weight: 600;
     line-height: 1.3;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Grid */
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* Card */
 .news-card {
     background: #ffffff;
     border-radius: 18px;
@@ -334,75 +439,86 @@
     width: 100%;
     height: 160px;
     object-fit: cover;
+    display: block;
 }
 
 .news-content {
-    padding: 16px 18px 22px;
+    padding: 16px 18px 20px;
 }
 
 .news-content h3 {
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 8px;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
 }
 
 .date {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 400;
     opacity: 0.6;
+    font-family: 'Inter', sans-serif;
 }
 
 .readmore {
     display: inline-block;
-    margin-top: 12px;
-    font-size: 14px;
-    font-weight: 700;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
     color: #2d6cdf;
     text-decoration: none;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* RESOURCES SECTION */
+/* ===== RESOURCES SECTION ===== */
 .resources-section {
-    padding: 80px 0;
+    padding: 50px 20px;
     background: linear-gradient(to bottom, #f7f8fc, #ffffff);
     position: relative;
-}
-
-/* Header */
-.resources-header {
-    text-align: center;
     margin-bottom: 50px;
 }
 
+.resources-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
 .resources-title {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: #1669F2;
     letter-spacing: 1.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .resources-heading {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 600;
     margin-top: 6px;
     color: #1e1e1e;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .resources-subtitle {
     color: #666;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 400;
     margin-top: 6px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* GRID */
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
+    gap: 20px;
     max-width: 1000px;
     margin: auto;
 }
 
-/* CARD */
 .resources-card {
     background: #ffffff;
     padding: 20px 22px;
@@ -410,40 +526,49 @@
     box-shadow: 0 4px 18px rgba(0,0,0,0.04);
     transition: 0.25s ease;
     border: 1px solid #f1f1f1;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+
 
 .resources-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* TEXT */
 .card-title {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     color: #1e1e1e;
     line-height: 1.4;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
 }
 
 .card-desc {
     margin-top: 6px;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 400;
     color: #666;
+    font-family: 'Inter', sans-serif;
 }
 
-/* CARD INFO */
 .card-info {
     display: flex;
     gap: 10px;
-    margin: 15px 0 18px;
+    margin: 12px 0 15px;
 }
 
 .info-item {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 400;
     color: #444;
+    font-family: 'Inter', sans-serif;
 }
 
 .info-item img {
@@ -451,7 +576,6 @@
     height: 16px;
 }
 
-/* BUTTON */
 .btn-download {
     display: flex;
     align-items: center;
@@ -459,12 +583,15 @@
     gap: 6px;
     background: #1669F2;
     color: white;
-    padding: 10px 0;
+    padding: 12px 0;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     transition: 0.25s;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
+    margin-top: auto;
 }
 
 .btn-download img {
@@ -476,23 +603,11 @@
     background: #0f4ec2;
 }
 
-/* HERO SECTION */
-.hero-section {
-    width: 100%;
-    height: 530px;
-    background: url('/images/Home/image5.png') no-repeat center center/cover;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 80px;
-    padding-right: 80px;
-}
-
 /* ===== DIGITAL COMMUNICATION SECTION ===== */
 .digital-communication-section {
     background: url('/images/Home/image5.png') no-repeat center center;
     background-size: cover;
-    padding: 80px 20px;
+    padding: 50px 20px;
     color: white;
     margin-top: 0;
     position: relative;
@@ -503,67 +618,67 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    text-align: left; /* Ubah ke kiri */
-    padding-left: 60px; /* Tambahkan padding kiri */
+    text-align: left;
+    padding-left: 60px;
 }
 
 .digital-communication-title {
     font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
     line-height: 1.3;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    max-width: 600px; /* Batasi lebar agar tidak terlalu panjang */
+    max-width: 600px;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .digital-communication-description {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
     opacity: 0.95;
     line-height: 1.6;
-    margin-bottom: 15px;
-    max-width: 550px; /* Batasi lebar */
+    margin-bottom: 12px;
+    max-width: 550px;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif;
 }
 
 .digital-communication-cta {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     max-width: 550px;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* ===================================== */
-/* === BUTTON CONTACT US (SAMA DENGAN JADWALKAN DEMO) ==== */
-/* ===================================== */
-
+/* ===== BUTTON CONTACT US ===== */
 .digital-communication-button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
     background: linear-gradient(180deg, #f6f9ff 0%, #e4ecff 100%);
     color: #0d2d8c;
-
-    padding: 14px 34px;
+    padding: 16px 36px;
     border-radius: 50px;
-
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
     text-decoration: none;
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: 0.25s ease;
+    letter-spacing: -0.3px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* buttonn contac us */
 .digital-communication-button::after {
     content: "";
     width: 0;
     height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid #0d2d8c;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #0d2d8c;
     margin-left: 6px;
 }
 
@@ -572,11 +687,193 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
 
+/* =================================================== */
+/* ================= RESPONSIVE DESIGN =============== */
+/* =================================================== */
 
-/* Responsive adjustments */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .text-effect-title {
+        font-size: 56px;
+    }
+    
+    .hero-text-box h1 {
+        font-size: 38px;
+    }
+    
+    .hero-text-box p {
+        font-size: 18px;
+    }
+    
+    .carousel-item img {
+        height: 450px;
+    }
+    
+    .carousel-overlay h3 {
+        font-size: 32px;
+    }
+    
+    .industry-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 40px auto;
+    }
+    
+    .carousel-container {
+        width: 95%;
+    }
+}
+
+/* Tablet Kecil (577px - 768px) */
 @media (max-width: 768px) {
+    .text-effect-container {
+        margin: 20px auto 15px;
+    }
+    
+    .text-effect-title {
+        font-size: 48px;
+    }
+    
+    .text-effect-subtitle {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+    
+    .hero-overlay {
+        padding-left: 40px;
+        padding-right: 40px;
+        justify-content: center;
+    }
+    
+    .hero-text-box {
+        text-align: center;
+    }
+    
+    .hero-text-box h1 {
+        font-size: 34px;
+        margin-bottom: 12px;
+    }
+    
+    .hero-text-box p {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-button {
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+    
+    .feature-section {
+        margin: 20px auto 10px;
+        gap: 15px;
+    }
+    
+    .feature-box {
+        width: calc(50% - 10px);
+        padding: 12px 15px;
+    }
+    
+    .feature-box img {
+        width: 40px;
+    }
+    
+    .feature-box h3 {
+        font-size: 16px;
+    }
+    
+    .feature-box p {
+        font-size: 14px;
+    }
+    
+    .product-section {
+        margin-top: 40px;
+    }
+    
+    .product-header h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .product-header p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .carousel-item img {
+        height: 400px;
+    }
+    
+    .carousel-overlay {
+        top: 30px;
+    }
+    
+    .carousel-overlay h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .readmore-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .prev { left: 15px; }
+    .next { right: 15px; }
+    
+    .carousel-dots {
+        bottom: 15px;
+    }
+    
+    .industry-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 30px auto;
+    }
+    
+    .news-section {
+        margin-top: 40px;
+        padding: 20px 15px 50px;
+    }
+    
+    .news-header h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .news-content h3 {
+        font-size: 16px;
+    }
+    
+    .news-content {
+        padding: 12px 15px 16px;
+    }
+    
+    .resources-section {
+        padding: 40px 15px;
+        margin-bottom: 40px;
+    }
+    
+    .resources-header {
+        margin-bottom: 25px;
+    }
+    
+    .resources-heading {
+        font-size: 28px;
+    }
+    
+    .resources-subtitle {
+        font-size: 16px;
+    }
+    
     .digital-communication-section {
-        padding: 60px 20px;
+        padding: 40px 20px;
     }
     
     .digital-communication-container {
@@ -586,178 +883,317 @@
     
     .digital-communication-title {
         font-size: 28px;
+    }
+    
+    .digital-communication-description {
+        font-size: 18px;
+    }
+    
+    .digital-communication-cta {
+        font-size: 20px;
+    }
+    
+    .digital-communication-button {
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+}
+
+/* Mobile (425px - 576px) */
+@media (max-width: 576px) {
+    .text-effect-title {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+    
+    .text-effect-subtitle {
+        font-size: 15px;
+    }
+    
+    .hero-overlay {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .hero-text-box h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .hero-text-box p {
+        font-size: 16px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+    
+    .hero-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .feature-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .feature-box {
+        width: 100%;
+        max-width: 320px;
+        padding: 10px 15px;
+    }
+    
+    .product-header h4 {
+        font-size: 14px;
+    }
+    
+    .product-header h2 {
+        font-size: 24px;
+    }
+    
+    .product-header p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        border-radius: 15px;
+    }
+    
+    .carousel-item img {
+        height: 350px;
+        border-radius: 15px;
+    }
+    
+    .carousel-overlay {
+        top: 20px;
+        width: 95%;
+    }
+    
+    .carousel-overlay h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .readmore-btn {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+    
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        display: none; /* Sembunyikan arrows di mobile kecil */
+    }
+    
+    .carousel-dots {
+        bottom: 10px;
+        gap: 8px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .industry-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 25px auto;
+    }
+    
+    .news-section {
+        margin-top: 30px;
+        padding: 15px 10px 40px;
+    }
+    
+    .news-header h4 {
+        font-size: 16px;
+    }
+    
+    .news-header h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .news-img {
+        height: 140px;
+    }
+    
+    .news-content h3 {
+        font-size: 15px;
+    }
+    
+    .date {
+        font-size: 13px;
+    }
+    
+    .readmore {
+        font-size: 14px;
+    }
+    
+    .resources-section {
+        padding: 30px 10px;
+        margin-bottom: 30px;
+    }
+    
+    .resources-header {
+        margin-bottom: 20px;
+    }
+    
+    .resources-title {
+        font-size: 14px;
+    }
+    
+    .resources-heading {
+        font-size: 24px;
+    }
+    
+    .resources-subtitle {
+        font-size: 15px;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .resources-card {
+        padding: 15px 18px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+    
+    .card-desc {
+        font-size: 14px;
+    }
+    
+    .digital-communication-section {
+        padding: 30px 15px;
+        text-align: center;
+    }
+    
+    .digital-communication-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .digital-communication-title {
+        font-size: 24px;
+        margin-bottom: 10px;
         max-width: 100%;
     }
     
     .digital-communication-description {
         font-size: 16px;
+        margin-bottom: 10px;
         max-width: 100%;
     }
     
     .digital-communication-cta {
         font-size: 18px;
+        margin-bottom: 20px;
         max-width: 100%;
     }
     
     .digital-communication-button {
-        padding: 12px 28px;
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .digital-communication-section {
-        padding: 50px 15px;
-    }
-    
-    .digital-communication-container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    .digital-communication-title {
-        font-size: 24px;
-    }
-    
-    .digital-communication-description {
-        font-size: 15px;
-    }
-    
-    .digital-communication-cta {
+        padding: 12px 24px;
         font-size: 16px;
     }
 }
 
-.resources-section {
-    margin-bottom: 80px; /* Memberi jarak sebelum footer */
-}
-
-/* === BUTTON JADWALKAN DEMO BARU ==== */
-.hero-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    background: linear-gradient(180deg, #f6f9ff 0%, #e4ecff 100%);
-    color: #0d2d8c;
+/* Mobile Sangat Kecil (di bawah 425px) */
+@media (max-width: 425px) {
+    .text-effect-title {
+        font-size: 32px;
+    }
     
-    padding: 14px 34px;
-    border-radius: 50px;
+    .hero-text-box h1 {
+        font-size: 24px;
+    }
     
-    font-weight: 700;
-    font-size: 18px;
-    text-decoration: none;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: 0.25s ease;
+    .hero-text-box p {
+        font-size: 15px;
+    }
+    
+    .hero-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .feature-box {
+        max-width: 280px;
+    }
+    
+    .product-header h2 {
+        font-size: 22px;
+    }
+    
+    .carousel-item img {
+        height: 300px;
+    }
+    
+    .carousel-overlay h3 {
+        font-size: 20px;
+    }
+    
+    .readmore-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+    
+    .industry-section {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .news-header h2 {
+        font-size: 22px;
+    }
+    
+    .news-content h3 {
+        font-size: 14px;
+    }
+    
+    .resources-heading {
+        font-size: 22px;
+    }
+    
+    .digital-communication-title {
+        font-size: 22px;
+    }
+    
+    .digital-communication-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }
 
-.hero-button .arrow {
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid #0d2d8c;
-    margin-left: 4px;
+/* Optimasi untuk Landscape Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .carousel-item img {
+        height: 350px;
+    }
+    
+    .hero-overlay {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: flex-start;
+    }
+    
+    .feature-box {
+        padding: 8px 12px;
+    }
 }
-
-.hero-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-}
-
-/* ===== CAROUSEL ===== */
-.carousel-container {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    position: relative;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ===== OVERLAY TEXT ===== */
-.carousel-overlay {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-}
-
-.carousel-overlay h3 {
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-}
-
-.readmore-btn {
-    background: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #2d6cdf;
-    text-decoration: none;
-}
-
-/* ===== ARROWS ===== */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.25);
-    border: none;
-    font-size: 24px;
-    padding: 8px 14px;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev { left: 15px; }
-.next { right: 15px; }
-
-/* ===== DOTS ===== */
-.carousel-dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid white;
-    background: transparent; /* bening */
-    cursor: pointer;
-}
-
-.dot.active {
-    background: white; /* PUTIH */
-}
-
 </style>
 
 <!-- HERO SECTION -->
@@ -769,9 +1205,9 @@
             <h1>Smart Display Solutions <br> untuk Semua Industri</h1>
 
             <p>
-                Digital Signage, Smart Kiosk, dan Interactive Whiteboards yang andal
-                untuk ruang publik, kantor, dan sekolah. Tingkatkan engagement dengan
-                teknologi display interaktif modern.
+                Digital Signage, Smart Kiosk, dan Interactive Whiteboards yang andal <br>
+                untuk ruang publik, kantor, dan sekolah. Tingkatkan engagement <br>
+                 dengan teknologi display interaktif modern.
             </p>
 
            <a href="/demo" class="hero-button">
@@ -835,27 +1271,30 @@
     <div class="carousel-container">
         <div class="carousel-slide">
 
+            <!-- Item 1: Interactive Whiteboard -->
             <div class="carousel-item">
-                <img src="{{ asset('images/Home/image2.png') }}" alt="">
-                <div class="carousel-overlay">
+                <img src="{{ asset('images/Home/image2.png') }}" alt="Interactive Whiteboard">
+                <div class="carousel-overlay">  
                     <h3>Disply Interactive Whiteboard</h3>
-                    <a class="readmore-btn">Read More</a>
+                    <a href="/product/iwb" class="readmore-btn">Read More</a>
                 </div>
             </div>
 
+                <!-- Item 3: Digital Signage -->
             <div class="carousel-item">
-                <img src="{{ asset('images/Home/image3.png') }}" alt="">
-                <div class="carousel-overlay">
-                    <h3>Disply Smart Kiosk</h3>
-                    <a class="readmore-btn">Read More</a>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="{{ asset('images/Home/image4.png') }}" alt="">
+                <img src="{{ asset('images/Home/image4.png') }}" alt="Digital Signage">
                 <div class="carousel-overlay">
                     <h3>Disply Digital Signage</h3>
-                    <a class="readmore-btn">Read More</a>
+                    <a href="/product/digital-signage" class="readmore-btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- Item 2: Smart Kiosk -->
+            <div class="carousel-item">
+                <img src="{{ asset('images/Home/image3.png') }}" alt="Smart Kiosk">
+                <div class="carousel-overlay">
+                    <h3>Disply Smart Kiosk</h3>
+                    <a href="/product/kiosk" class="readmore-btn">Read More</a>
                 </div>
             </div>
 
@@ -873,7 +1312,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- INDUSTRY SECTION (IMAGE ONLY - NO CARD) -->
 <div class="industry-section">
@@ -952,25 +1390,25 @@
 
     <div class="resources-grid">
 
-        <!-- CARD 1 -->
-        <div class="resources-card">
-            <h3 class="card-title">Disply Smart Kiosk Brosur</h3>
-            <p class="card-desc">Download semua informasi produk dalam satu file</p>
+<!-- CARD 1 -->
+<div class="resources-card">
+    <h3 class="card-title">Display Smart Kiosk Brosur</h3>
+    <p class="card-desc">Download semua informasi produk dalam satu file</p>
 
-            <div class="card-info">
-                <span class="info-item">
-                    <img src="/images/Home/icon5.png" alt="page"> 12 Pages
-                </span>
-                <span class="info-item">
-                    <img src="/images/Home/icon6.png" alt="size"> 24 MB
-                </span>
-            </div>
+    <div class="card-info">
+        <span class="info-item">
+            <img src="/images/Home/icon5.png" alt="page"> 12 Pages
+        </span>
+        <span class="info-item">
+            <img src="/images/Home/icon6.png" alt="size"> 24 MB
+        </span>
+    </div>
 
-            <a href="#" class="btn-download">
-                <img src="/images/Home/icon7.png" alt="download">
-                Download PDF
-            </a>
-        </div>
+    <a href="/pdf/BrosurKiosk.pdf" class="btn-download" download>
+        <img src="/images/Home/icon7.png" alt="download">
+        Download PDF
+    </a>
+</div>
 
         <!-- CARD 2 -->
         <div class="resources-card">
@@ -986,7 +1424,7 @@
                 </span>
             </div>
 
-            <a href="#" class="btn-download">
+             <a href="/pdf/BrosurDigitalSignage.pdf" class="btn-download" download>
                 <img src="/images/Home/icon7.png" alt="download">
                 Download PDF
             </a>
@@ -1006,7 +1444,7 @@
                 </span>
             </div>
 
-            <a href="#" class="btn-download">
+           <a href="/pdf/BrosurInteractiveWhiteboard.pdf" class="btn-download" download>
                 <img src="/images/Home/icon7.png" alt="download">
                 Download PDF
             </a>
@@ -1067,6 +1505,5 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCarousel(); // INIT
 });
 </script>
-
 
 @endsection

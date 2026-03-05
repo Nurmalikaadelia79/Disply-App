@@ -1,11 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
 
 <style>
-/* =========================
-   HERO SECTION
-========================= */
 .about-hero {
     position: relative;
     z-index: 1;
@@ -21,31 +18,29 @@
 }
 
 .about-content {
-    max-width: 650px;
+    max-width: 100%;
 }
 
 .about-content h1 {
-    font-size: 36px;
+    font-size: 50px;
     font-weight: 700;
     margin-bottom: 16px;
+    line-height: 1.1;
 }
 
 .about-content p {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.7;
     color: #e6ecff;
 }
 
-/* =========================
-   CARD WRAPPER
-========================= */
 .partner-card-wrapper {
     position: relative;
     z-index: 10;
-    margin-top: -160px;
+    margin-top: -120px;
     display: flex;
     justify-content: center;
-    padding-bottom: 120px;
+    padding: 0 20px 120px;
 }
 
 /* =========================
@@ -54,7 +49,7 @@
 .partner-card {
     width: 100%;
     max-width: 560px;
-    padding: 32px 30px 36px; /* SEIMBANG: kiri-kanan 30px */
+    padding: 32px 30px 36px;
     border-radius: 16px;
     background:
         linear-gradient(#ffffff, #ffffff) padding-box,
@@ -72,12 +67,9 @@
     font-weight: 600;
     color: #193295;
     margin-bottom: 24px;
-    padding: 0 10px; /* Tambah padding biar gak mentok */
+    padding: 0 10px;
 }
 
-/* =========================
-   FORM
-========================= */
 .partner-form {
     display: flex;
     flex-direction: column;
@@ -104,7 +96,7 @@
     outline: none;
     background: #ffffff;
     color: #193295;
-    box-sizing: border-box; /* TAMBAH INI */
+    box-sizing: border-box;
 }
 
 .partner-form input:focus,
@@ -135,35 +127,164 @@
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .partner-form button:hover {
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(162, 183, 255, 0.2);
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Untuk layar kecil (tablet) */
+@media (max-width: 1024px) {
+    .about-hero {
+        height: 320px;
+        padding: 40px;
+    }
+    
+    .about-content h1 {
+        font-size: 40px;
+    }
+    
+    .about-content p {
+        font-size: 17px;
+    }
+}
+
+/* Untuk tablet kecil dan mobile landscape */
+@media (max-width: 900px) {
+    .about-hero {
+        height: 300px;
+        padding: 30px;
+    }
+    
+    .about-content h1 {
+        font-size: 35px;
+    }
+}
+
+/* Untuk mobile */
 @media (max-width: 768px) {
     .partner-card-wrapper {
         margin-top: -120px;
-        padding: 0 20px 100px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .about-hero {
-        padding: 40px 24px;
-        height: 360px;
-    }
-
-    .about-content h1 {
-        font-size: 30px;
+        padding: 0 15px 80px;
     }
     
-    /* PASTIKAN CARD PUNYA PADDING DI MOBILE */
     .partner-card {
-        padding: 28px 25px 32px;
+        padding: 24px 20px 28px;
+        max-width: 100%;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    
+    .about-hero {
+        padding: 30px 20px;
+        height: 280px;
+    }
+    
+    .about-content h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+    
+    .about-content p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .partner-form button {
+        padding: 10px 36px;
+        font-size: 14px;
+    }
+}
+
+/* Untuk mobile kecil */
+@media (max-width: 640px) {
+    .about-hero {
+        height: 260px;
+        padding: 25px 15px;
+    }
+    
+    .about-content h1 {
+        font-size: 28px;
+    }
+    
+    .about-content p {
+        font-size: 15px;
+    }
+    
+    .partner-card-wrapper {
+        padding: 0 12px 60px;
+    }
+}
+
+/* Untuk mobile sangat kecil */
+@media (max-width: 480px) {
+    .about-hero {
+        height: 240px;
+    }
+    
+    .about-content h1 {
+        font-size: 26px;
+    }
+    
+    .about-content p {
+        font-size: 14px;
+    }
+    
+    .partner-card {
+        padding: 20px 16px 24px;
+        border-radius: 12px;
+    }
+    
+    .partner-card h2 {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .partner-form {
+        gap: 12px;
+    }
+    
+    .partner-form input,
+    .partner-form textarea {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Untuk iPhone SE / layar sangat kecil */
+@media (max-width: 375px) {
+    .about-hero {
+        height: 220px;
+    }
+    
+    .about-content h1 {
+        font-size: 24px;
+    }
+    
+    .about-content p {
+        font-size: 13px;
+    }
+    
+    .partner-card {
+        padding: 18px 14px 22px;
+    }
+}
+
+/* TAMBAHAN: Hanya jika benar-benar perlu wrap di layar sangat sempit */
+@media (max-width: 320px) {
+    .about-content h1 {
+        font-size: 22px;
+        word-break: keep-all;
     }
 }
 </style>
@@ -182,11 +303,9 @@
 <!-- CARD -->
 <div class="partner-card-wrapper">
     <div class="partner-card">
-
         <h2>Become a Partner</h2>
 
         <form class="partner-form" onsubmit="sendPartnerToWhatsApp(event)">
-
             <div class="form-row">
                 <div>
                     <label>Name *</label>
@@ -233,9 +352,7 @@
             </div>
 
             <button type="submit">Submit</button>
-
         </form>
-
     </div>
 </div>
 
@@ -264,7 +381,7 @@ function sendPartnerToWhatsApp(e) {
     }
 
     const text =
-`Halo Disply 👋
+`Halo Disply 
 Saya ingin bergabung sebagai Partner.
 
 Nama: ${document.getElementById('name').value}
@@ -279,7 +396,7 @@ Pesan:
 ${document.getElementById('message').value || '-'}`;
 
     window.open(
-        "https://wa.me/6281804113951?text=" + encodeURIComponent(text),
+        "https://wa.me/6287865000432?text=" + encodeURIComponent(text),
         "_blank"
     );
 }
