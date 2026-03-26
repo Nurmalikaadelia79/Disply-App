@@ -37,7 +37,7 @@
 .partner-card-wrapper {
     position: relative;
     z-index: 10;
-    margin-top: -120px;
+    margin-top: -90px;
     display: flex;
     justify-content: center;
     padding: 0 20px 120px;
@@ -135,160 +135,93 @@
     box-shadow: 0 4px 12px rgba(162, 183, 255, 0.2);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
-/* Untuk layar kecil (tablet) */
+/* ================= TAMBAHAN FIX (TIDAK MENGHAPUS) ================= */
+
+/* Anti overflow */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Hero biar gak kepotong */
+.about-hero {
+    height: auto !important;
+    min-height: 380px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
 @media (max-width: 1024px) {
     .about-hero {
-        height: 320px;
-        padding: 40px;
+        padding: 50px 30px;
     }
-    
+
     .about-content h1 {
-        font-size: 40px;
+        font-size: 38px;
     }
-    
+
     .about-content p {
-        font-size: 17px;
+        font-size: 18px;
     }
-}
 
-/* Untuk tablet kecil dan mobile landscape */
-@media (max-width: 900px) {
-    .about-hero {
-        height: 300px;
-        padding: 30px;
-    }
-    
-    .about-content h1 {
-        font-size: 35px;
-    }
-}
-
-/* Untuk mobile */
-@media (max-width: 768px) {
     .partner-card-wrapper {
-        margin-top: -120px;
-        padding: 0 15px 80px;
-    }
-    
-    .partner-card {
-        padding: 24px 20px 28px;
-        max-width: 100%;
-    }
-    
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
-    
-    .about-hero {
-        padding: 30px 20px;
-        height: 280px;
-    }
-    
-    .about-content h1 {
-        font-size: 32px;
-        line-height: 1.2;
-        margin-bottom: 12px;
-    }
-    
-    .about-content p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-    
-    .partner-form button {
-        padding: 10px 36px;
-        font-size: 14px;
+        margin-top: -80px;
     }
 }
 
-/* Untuk mobile kecil */
-@media (max-width: 640px) {
+/* Mobile */
+@media (max-width: 768px) {
     .about-hero {
-        height: 260px;
-        padding: 25px 15px;
+        padding: 40px 20px;
+        min-height: 300px;
+        text-align: center;
     }
-    
+
     .about-content h1 {
         font-size: 28px;
     }
-    
+
     .about-content p {
-        font-size: 15px;
+        font-size: 16px;
     }
-    
+
+    /* ini fix utama biar gak kepotong */
     .partner-card-wrapper {
-        padding: 0 12px 60px;
+        margin-top: -40px !important;
+        padding-bottom: 60px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .partner-form button {
+        width: 100%;
     }
 }
 
-/* Untuk mobile sangat kecil */
+/* HP kecil */
 @media (max-width: 480px) {
-    .about-hero {
-        height: 240px;
-    }
-    
-    .about-content h1 {
-        font-size: 26px;
-    }
-    
-    .about-content p {
-        font-size: 14px;
-    }
-    
-    .partner-card {
-        padding: 20px 16px 24px;
-        border-radius: 12px;
-    }
-    
-    .partner-card h2 {
-        font-size: 15px;
-        margin-bottom: 20px;
-    }
-    
-    .partner-form {
-        gap: 12px;
-    }
-    
-    .partner-form input,
-    .partner-form textarea {
-        padding: 11px 12px;
-        font-size: 14px;
-    }
-}
-
-/* Untuk iPhone SE / layar sangat kecil */
-@media (max-width: 375px) {
-    .about-hero {
-        height: 220px;
-    }
-    
     .about-content h1 {
         font-size: 24px;
     }
-    
+
     .about-content p {
-        font-size: 13px;
+        font-size: 14px;
     }
-    
+
     .partner-card {
-        padding: 18px 14px 22px;
+        padding: 24px 20px;
     }
 }
 
-/* TAMBAHAN: Hanya jika benar-benar perlu wrap di layar sangat sempit */
-@media (max-width: 320px) {
-    .about-content h1 {
-        font-size: 22px;
-        word-break: keep-all;
-    }
-}
 </style>
-
+ 
 <!-- HERO -->
 <section class="about-hero">
     <div class="about-content">
@@ -348,7 +281,7 @@
 
             <div>
                 <label>Message (Optional)</label>
-                <textarea id="message" placeholder="Type your message..."></textarea>
+                <textarea id="message" placeholder="Type your message..." required></textarea>
             </div>
 
             <button type="submit">Submit</button>

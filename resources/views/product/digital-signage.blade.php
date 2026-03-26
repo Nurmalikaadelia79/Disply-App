@@ -31,7 +31,7 @@
 }
 
 .about-content h1 {
-    font-size: 40px; /* DARI 36px KE 40px */
+    font-size: 44px; /* DARI 36px KE 40px */
     line-height: 1.3;
     margin-bottom: 16px;
     font-weight: 700;
@@ -39,7 +39,7 @@
 }
 
 .about-content p {
-    font-size: 20px; /* DARI 16px KE 18px */
+    font-size: 22px; /* DARI 16px KE 18px */
     line-height: 1.7;
     margin-bottom: 24px;
     color: #e6ecff;
@@ -75,15 +75,7 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
 
-@media (max-width: 768px) {
-    .about-hero {
-        height: auto;
-        padding: 40px 24px;
-    }
-    .about-content h1 {
-        font-size: 32px;
-    }
-}
+
 
 /* ========================= SIGNAGE INFO ========================= */
 .signage-info {
@@ -144,15 +136,7 @@
     height: auto;
 }
 
-@media (max-width: 768px) {
-    .signage-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .signage-icons {
-        justify-content: center;
-    }
-}
+
 
 /* ========================= SIGNAGE FEATURE ONLY ========================= */
 .signage-feature-only {
@@ -193,17 +177,7 @@
     display: block;
 }
 
-/* Responsive untuk layout 2 kolom */
-@media (max-width: 768px) {
-    .signage-feature-only h2 {
-        font-size: 28px; /* DARI 24px KE 28px */
-    }
-    
-    .feature-image-list {
-        grid-template-columns: 1fr; /* DI MOBILE JADI 1 KOLOM */
-        gap: 30px;
-    }
-}
+
 
 /* ========================= SIGNAGE USAGE ========================= */
 .signage-usage {
@@ -259,19 +233,7 @@
     max-width: 380px; /* DARI 340px KE 380px */
 }
 
-@media (max-width: 768px) {
-    .usage-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .usage-images {
-        justify-items: center;
-    }
-    
-    .signage-usage h2 {
-        font-size: 32px;
-    }
-}
+
 
 .signage-extra-full {
     position: relative;
@@ -312,16 +274,7 @@
     margin-bottom: 6px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .signage-extra-overlay {
-        position: static;
-        transform: none;
-        padding: 40px 24px;
-        color: #111;
-        background: #fff;
-    }
-}
+
 
 /* ========================= PRODUCT SPEC SECTION ========================= */
 .product-spec-section {
@@ -441,15 +394,7 @@
     font-weight: 400;
 }
 
-@media (max-width: 992px) {
-    .product-spec-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .product-spec-grid {
-        grid-template-columns: 1fr;
-    }
-}
+
 
 .product-spec-image-wrapper {
     position: relative;
@@ -470,6 +415,201 @@
     width: 200px;
     height: 48px;
     cursor: pointer;
+}
+/* ================= RESPONSIVE FIX ================= */
+
+/* cegah horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* semua image aman */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* TABLET */
+@media (max-width: 1024px){
+
+.about-hero{
+    height: auto;
+    padding: 80px 40px;
+}
+
+.about-content h1{
+    font-size:36px;
+}
+
+.about-content p{
+    font-size:18px;
+}
+
+.signage-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.signage-content{
+    margin:auto;
+}
+
+.usage-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.product-spec-card{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.signage-extra-overlay{
+    position:relative;
+    transform:none;
+    left:auto;
+    top:auto;
+    padding:60px 30px;
+    background:rgba(13,45,140,0.85);
+    margin-top:-6px;
+}
+
+}
+
+
+/* MOBILE */
+@media (max-width:768px){
+
+.about-hero{
+    padding:70px 24px;
+}
+
+.about-content h1{
+    font-size:28px;
+}
+
+.about-content p{
+    font-size:16px;
+}
+
+.btn-demo{
+    padding:12px 26px;
+    font-size:14px;
+}
+
+.signage-info{
+    padding:60px 20px;
+}
+
+.signage-content h2{
+    font-size:26px;
+}
+
+.signage-content p{
+    font-size:16px;
+}
+
+.signage-icons{
+    justify-content:center;
+}
+
+.feature-image-list{
+    grid-template-columns:1fr;
+}
+
+.signage-feature-only{
+    padding:60px 20px;
+}
+
+.signage-usage{
+    padding:60px 20px;
+}
+
+.usage-images{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.signage-extra-overlay h2{
+    font-size:24px;
+}
+
+.signage-extra-overlay p{
+    font-size:15px;
+}
+
+.product-spec-container h2{
+    font-size:26px;
+}
+
+.product-spec-section{
+    padding:70px 20px;
+}
+
+}
+
+
+/* HP KECIL */
+@media (max-width:480px){
+
+.about-content h1{
+    font-size:24px;
+}
+
+.about-content p{
+    font-size:15px;
+}
+
+.usage-images{
+    grid-template-columns:1fr;
+}
+
+.signage-extra-overlay{
+    padding:40px 20px;
+}
+
+.signage-extra-overlay h2{
+    font-size:22px;
+}
+
+}
+/* ================= FIX NAVBAR & LAYOUT ================= */
+
+/* HILANGIN SPACE KANAN */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* NAVBAR IKUT SCROLL (TARGET YANG BENAR) */
+nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background: linear-gradient(to bottom, white, #eef3ff);
+}
+
+/* KONTEN TURUN BIAR GA KETUTUP NAVBAR */
+.content-area {
+    margin-top: 90px;
+}
+
+/* SEMUA SECTION FULL WIDTH & AMAN */
+section,
+.about-hero,
+.kiosk-section,
+.kiosk-feature-section,
+.kiosk-usage-section,
+.product-spec-section {
+    width: 100%;
+}
+
+/* IMAGE AMAN */
+img {
+    max-width: 100%;
+    height: auto;
 }
 </style>
 

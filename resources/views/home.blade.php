@@ -267,7 +267,7 @@ body {
 }
 
 .carousel-overlay h3 {
-    font-size: 36px;n
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
     text-shadow: 0px 4px 15px rgba(0,0,0,0.5);
@@ -687,513 +687,107 @@ body {
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
 
-/* =================================================== */
-/* ================= RESPONSIVE DESIGN =============== */
-/* =================================================== */
+/* ===== RESPONSIVE DESIGN (MEDIA QUERIES) ===== */
 
-/* Tablet (768px - 1024px) */
-@media (max-width: 1024px) {
-    .text-effect-title {
-        font-size: 56px;
-    }
-    
-    .hero-text-box h1 {
-        font-size: 38px;
-    }
-    
-    .hero-text-box p {
-        font-size: 18px;
-    }
-    
-    .carousel-item img {
-        height: 450px;
-    }
-    
-    .carousel-overlay h3 {
-        font-size: 32px;
-    }
-    
-    .industry-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin: 40px auto;
-    }
-    
-    .carousel-container {
-        width: 95%;
-    }
-}
-
-/* Tablet Kecil (577px - 768px) */
-@media (max-width: 768px) {
-    .text-effect-container {
-        margin: 20px auto 15px;
-    }
-    
-    .text-effect-title {
-        font-size: 48px;
-    }
-    
-    .text-effect-subtitle {
-        font-size: 16px;
-        margin-top: 8px;
-    }
-    
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
     .hero-overlay {
         padding-left: 40px;
-        padding-right: 40px;
-        justify-content: center;
     }
-    
-    .hero-text-box {
-        text-align: center;
-    }
-    
     .hero-text-box h1 {
-        font-size: 34px;
-        margin-bottom: 12px;
-    }
-    
-    .hero-text-box p {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-    
-    .hero-button {
-        padding: 14px 30px;
-        font-size: 18px;
-    }
-    
-    .feature-section {
-        margin: 20px auto 10px;
-        gap: 15px;
-    }
-    
-    .feature-box {
-        width: calc(50% - 10px);
-        padding: 12px 15px;
-    }
-    
-    .feature-box img {
-        width: 40px;
-    }
-    
-    .feature-box h3 {
-        font-size: 16px;
-    }
-    
-    .feature-box p {
-        font-size: 14px;
-    }
-    
-    .product-section {
-        margin-top: 40px;
-    }
-    
-    .product-header h2 {
-        font-size: 28px;
-        margin-bottom: 12px;
-    }
-    
-    .product-header p {
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-    
-    .carousel-item img {
-        height: 400px;
-    }
-    
-    .carousel-overlay {
-        top: 30px;
-    }
-    
-    .carousel-overlay h3 {
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-    
-    .readmore-btn {
-        padding: 10px 24px;
-        font-size: 14px;
-    }
-    
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    .prev { left: 15px; }
-    .next { right: 15px; }
-    
-    .carousel-dots {
-        bottom: 15px;
-    }
-    
-    .industry-section {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        margin: 30px auto;
-    }
-    
-    .news-section {
-        margin-top: 40px;
-        padding: 20px 15px 50px;
-    }
-    
-    .news-header h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-    
-    .news-content h3 {
-        font-size: 16px;
-    }
-    
-    .news-content {
-        padding: 12px 15px 16px;
-    }
-    
-    .resources-section {
-        padding: 40px 15px;
-        margin-bottom: 40px;
-    }
-    
-    .resources-header {
-        margin-bottom: 25px;
-    }
-    
-    .resources-heading {
-        font-size: 28px;
-    }
-    
-    .resources-subtitle {
-        font-size: 16px;
-    }
-    
-    .digital-communication-section {
-        padding: 40px 20px;
-    }
-    
-    .digital-communication-container {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    
-    .digital-communication-title {
-        font-size: 28px;
-    }
-    
-    .digital-communication-description {
-        font-size: 18px;
-    }
-    
-    .digital-communication-cta {
-        font-size: 20px;
-    }
-    
-    .digital-communication-button {
-        padding: 14px 30px;
-        font-size: 18px;
-    }
-}
-
-/* Mobile (425px - 576px) */
-@media (max-width: 576px) {
-    .text-effect-title {
-        font-size: 40px;
-        line-height: 1.1;
-    }
-    
-    .text-effect-subtitle {
-        font-size: 15px;
-    }
-    
-    .hero-overlay {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    .hero-text-box h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-    
-    .hero-text-box p {
-        font-size: 16px;
-        margin-bottom: 12px;
-        line-height: 1.4;
-    }
-    
-    .hero-button {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-    
-    .feature-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .feature-box {
-        width: 100%;
-        max-width: 320px;
-        padding: 10px 15px;
-    }
-    
-    .product-header h4 {
-        font-size: 14px;
-    }
-    
-    .product-header h2 {
-        font-size: 24px;
-    }
-    
-    .product-header p {
-        font-size: 15px;
-        margin-bottom: 25px;
-    }
-    
-    .carousel-container {
-        width: 100%;
-        border-radius: 15px;
-    }
-    
-    .carousel-item img {
-        height: 350px;
-        border-radius: 15px;
-    }
-    
-    .carousel-overlay {
-        top: 20px;
-        width: 95%;
-    }
-    
-    .carousel-overlay h3 {
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-    
-    .readmore-btn {
-        padding: 8px 20px;
-        font-size: 13px;
-    }
-    
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-        display: none; /* Sembunyikan arrows di mobile kecil */
-    }
-    
-    .carousel-dots {
-        bottom: 10px;
-        gap: 8px;
-    }
-    
-    .carousel-dot {
-        width: 8px;
-        height: 8px;
-    }
-    
-    .industry-section {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin: 25px auto;
-    }
-    
-    .news-section {
-        margin-top: 30px;
-        padding: 15px 10px 40px;
-    }
-    
-    .news-header h4 {
-        font-size: 16px;
-    }
-    
-    .news-header h2 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-    
-    .news-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .news-img {
-        height: 140px;
-    }
-    
-    .news-content h3 {
-        font-size: 15px;
-    }
-    
-    .date {
-        font-size: 13px;
-    }
-    
-    .readmore {
-        font-size: 14px;
-    }
-    
-    .resources-section {
-        padding: 30px 10px;
-        margin-bottom: 30px;
-    }
-    
-    .resources-header {
-        margin-bottom: 20px;
-    }
-    
-    .resources-title {
-        font-size: 14px;
-    }
-    
-    .resources-heading {
-        font-size: 24px;
-    }
-    
-    .resources-subtitle {
-        font-size: 15px;
-    }
-    
-    .resources-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .resources-card {
-        padding: 15px 18px;
-    }
-    
-    .card-title {
-        font-size: 18px;
-    }
-    
-    .card-desc {
-        font-size: 14px;
-    }
-    
-    .digital-communication-section {
-        padding: 30px 15px;
-        text-align: center;
-    }
-    
-    .digital-communication-container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    .digital-communication-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-        max-width: 100%;
-    }
-    
-    .digital-communication-description {
-        font-size: 16px;
-        margin-bottom: 10px;
-        max-width: 100%;
-    }
-    
-    .digital-communication-cta {
-        font-size: 18px;
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-    
-    .digital-communication-button {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-}
-
-/* Mobile Sangat Kecil (di bawah 425px) */
-@media (max-width: 425px) {
-    .text-effect-title {
         font-size: 32px;
     }
-    
-    .hero-text-box h1 {
-        font-size: 24px;
-    }
-    
     .hero-text-box p {
-        font-size: 15px;
+        font-size: 18px;
     }
-    
-    .hero-button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    .feature-box {
-        max-width: 280px;
-    }
-    
-    .product-header h2 {
-        font-size: 22px;
-    }
-    
-    .carousel-item img {
-        height: 300px;
-    }
-    
-    .carousel-overlay h3 {
-        font-size: 20px;
-    }
-    
-    .readmore-btn {
-        padding: 6px 16px;
-        font-size: 12px;
-    }
-    
     .industry-section {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .news-header h2 {
-        font-size: 22px;
-    }
-    
-    .news-content h3 {
-        font-size: 14px;
-    }
-    
-    .resources-heading {
-        font-size: 22px;
-    }
-    
-    .digital-communication-title {
-        font-size: 22px;
-    }
-    
-    .digital-communication-button {
-        padding: 10px 20px;
-        font-size: 14px;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Optimasi untuk Landscape Mobile */
-@media (max-height: 600px) and (orientation: landscape) {
-    .carousel-item img {
-        height: 350px;
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-container {
+        min-height: 400px;
+        background: #0d2d8c; /* Fallback color */
     }
-    
+    .hero-bg {
+        height: 450px; /* Force height agar tidak terlalu gepeng */
+        object-fit: cover;
+    }
     .hero-overlay {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        align-items: flex-start;
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
     }
-    
+    .hero-text-box h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    .hero-text-box p {
+        font-size: 16px;
+        br { display: none; } /* Hilangkan breakline agar teks flow natural */
+    }
+    .hero-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    /* Features */
+    .feature-section {
+        gap: 10px;
+    }
     .feature-box {
-        padding: 8px 12px;
+        width: calc(50% - 15px); /* 2 kolom di mobile */
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Carousel */
+    .carousel-item img {
+        height: 350px; /* Kurangi tinggi gambar di HP */
+    }
+    .carousel-overlay h3 {
+        font-size: 24px;
+    }
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    /* Industry Icons */
+    .industry-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Digital Communication Section */
+    .digital-communication-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+    .digital-communication-title {
+        font-size: 24px;
+    }
+    .digital-communication-description {
+        font-size: 16px;
     }
 }
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .feature-box {
+        width: 100%; /* 1 kolom penuh di HP kecil */
+    }
+    .product-header h2, .news-header h2, .resources-heading {
+        font-size: 24px;
+    }
+}
+
 </style>
 
 <!-- HERO SECTION -->
@@ -1336,8 +930,22 @@ body {
     </div>
 
     <div class="news-grid">
-
-        <!-- CARD 1 -->
+        @forelse($blogs as $blog)
+        <!-- CARD BLOG DARI DATABASE -->
+        <div class="news-card">
+            @if($blog->image)
+                <img src="{{ asset('storage/'.$blog->image) }}" class="news-img" alt="{{ $blog->title }}">
+            @else
+                <img src="{{ asset('images/Home/image2.png') }}" class="news-img" alt="">
+            @endif
+            <div class="news-content">
+                <h3>{{ Str::limit($blog->title, 50) }}</h3>
+                <span class="date">{{ $blog->created_at->format('d F Y') }}</span>
+                <a href="{{ route('blog.show', $blog->slug) }}" class="readmore">Read More →</a>
+            </div>
+        </div>
+        @empty
+        <!-- KALO GA ADA BLOG, TAMPILKAN DUMMY 4 CARD -->
         <div class="news-card">
             <img src="{{ asset('images/Home/image2.png') }}" class="news-img" alt="">
             <div class="news-content">
@@ -1346,37 +954,8 @@ body {
                 <a href="#" class="readmore">Read More →</a>
             </div>
         </div>
-
-        <!-- CARD 2 -->
-        <div class="news-card">
-            <img src="{{ asset('images/Home/image2.png') }}" class="news-img" alt="">
-            <div class="news-content">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                <span class="date">02 DECEMBER 2023</span>
-                <a href="#" class="readmore">Read More →</a>
-            </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="news-card">
-            <img src="{{ asset('images/Home/image2.png') }}" class="news-img" alt="">
-            <div class="news-content">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                <span class="date">02 DECEMBER 2023</span>
-                <a href="#" class="readmore">Read More →</a>
-            </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="news-card">
-            <img src="{{ asset('images/Home/image2.png') }}" class="news-img" alt="">
-            <div class="news-content">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                <span class="date">02 DECEMBER 2023</span>
-                <a href="#" class="readmore">Read More →</a>
-            </div>
-        </div>
-
+        <!-- ... tambah 3 card dummy lagi ... -->
+        @endforelse
     </div>
 </div>
 

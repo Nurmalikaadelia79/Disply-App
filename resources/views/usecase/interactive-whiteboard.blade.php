@@ -10,7 +10,7 @@
     background: #f5f6f8;
 }
 
-/* ================= HERO ================= */
+/*HERO*/
 .iwb-hero {
     position: relative;
     height: 550px;
@@ -38,10 +38,12 @@
 
 .iwb-hero h1 {
     font-size: 41px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
     line-height: 1.1;
     color: #ffffff;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .iwb-hero p {
@@ -66,13 +68,13 @@
 }
 
 .iwb-section h2 span {
-    color: #2448C3; /* tetap biru */
+    color: #2448C3;
 }
 
 .iwb-section h3 {
     font-size: 26px;
     font-weight: 700;
-    color: #2448C3; /* tetap biru */
+    color: #2448C3;
     margin-bottom: 25px;
 }
 
@@ -80,7 +82,7 @@
     max-width: 1000px;
     margin: 0 auto 50px;
     font-size: 20px;
-    color: #000; /* tadinya abu → jadi hitam */
+    color: #000;
     line-height: 1.7;
 }
 
@@ -105,7 +107,7 @@
 .iwb-bottom h3 {
     font-size: 26px;
     font-weight: 700;
-    color: #2448C3; /* tetap biru */
+    color: #2448C3;
     margin-bottom: 20px;
 }
 
@@ -113,17 +115,17 @@
     max-width: 900px;
     margin: auto;
     font-size: 20px;
-    color: #000; /* tadinya abu → jadi hitam */
+    color: #000;
     line-height: 1.7;
 }
 
-/* ================= SHOWCASE ================= */
-.iwb-showcase {
+/* ================= USE CASE CARDS ================= */
+.iwb-usecase {
     background: #f5f6f8;
-    padding: 40px 20px 120px;
+    padding: 40px 20px 40px;
 }
 
-.iwb-showcase-grid {
+.iwb-usecase-grid {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
@@ -131,20 +133,91 @@
     gap: 30px;
 }
 
-.iwb-showcase-grid img {
+.usecase-card {
+    background: url('{{ asset('images/UseCase/IWB/card.png') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.usecase-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card-header img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.card-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2448C3;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.card-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 400;
+    max-width: 100%;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 500;
+}
+
+.feature-list li img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ================= BOTTOM IMAGE ================= */
+.iwb-bottom-image {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+    background: #f5f6f8;
+}
+
+.iwb-bottom-image img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
 }
 
-.iwb-showcase-grid img.full-width {
-    grid-column: span 3;
-}
-
-/* ================= FEATURES ================= */
+/* FEATURES - TEKS SEJAJAR DENGAN LOGO */
 .iwb-features {
     background: #eef2fb;
-    padding: 100px 20px;
+    padding: 80px 20px 110px;
 }
 
 .iwb-features-grid {
@@ -152,39 +225,56 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 30px;
+    justify-content: center;
 }
 
 .iwb-feature-card {
+    background: transparent;
+    border-radius: 16px;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .feature-header {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .feature-header img {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .feature-header h4 {
     font-size: 24px;
     font-weight: 700;
-    color: #2448C3; /* tetap biru */
+    color: #2448C3;
     line-height: 1.3;
+    margin: 0;
+    text-align: left;
+}
+
+.feature-description {
+    width: 100%;
+    /* Tidak ada padding-left, teks sejajar dengan logo */
 }
 
 .feature-description p {
     font-size: 18px;
-    color: #000; /* tadinya abu → jadi hitam */
-    line-height: 1.7;
-    margin: 0 0 0 76px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+    max-width: 100%;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -210,34 +300,47 @@
     .iwb-section p,
     .iwb-bottom p { font-size: 18px; }
 
-    .iwb-showcase-grid {
+    .iwb-usecase-grid {
         grid-template-columns: 1fr;
         gap: 25px;
-    }
-
-    .iwb-showcase-grid img.full-width {
-        grid-column: span 1;
     }
 
     .iwb-features-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
-    .feature-description p {
-        margin-left: 0;
-        text-align: center;
-    }
-
+    
     .feature-header {
-        flex-direction: column;
-        text-align: center;
+        gap: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .iwb-hero h1 { font-size: 26px; }
     .iwb-hero p { font-size: 16px; }
+    
+    .usecase-card {
+        padding: 30px 20px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feature-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .feature-header h4 {
+        text-align: center;
+    }
+    
+    .feature-description p {
+        text-align: center;
+    }
 }
 </style>
 
@@ -280,24 +383,89 @@
         </p>
     </section>
 
-    <!-- SHOWCASE -->
-    <section class="iwb-showcase">
-        <div class="iwb-showcase-grid">
-            <img src="{{ asset('images/UseCase/IWB/image3.png') }}">
-            <img src="{{ asset('images/UseCase/IWB/image4.png') }}">
-            <img src="{{ asset('images/UseCase/IWB/image5.png') }}">
-            <img src="{{ asset('images/UseCase/IWB/image6.png') }}" class="full-width">
+    <!-- USE CASE CARDS dengan background card.png -->
+    <section class="iwb-usecase">
+        <div class="iwb-usecase-grid">
+            
+            <!-- Card 1: Meeting Collaboration -->
+            <div class="usecase-card">
+                <div class="card-header">
+                    <img src="{{ asset('images/UseCase/IWB/meeting.png') }}" alt="Meeting">
+                    <h3>Meeting Collaboration</h3>
+                </div>
+                <div class="card-content">
+                    <p>Kolaborasi tim menjadi lebih interaktif melalui anotasi langsung, screen sharing wireless, dan diskusi real-time.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <img src="{{ asset('images/UseCase/IWB/check.png') }}" alt="check">
+                            Faster Decision Making
+                        </li>
+                        <li>
+                            <img src="{{ asset('images/UseCase/IWB/check.png') }}" alt="check">
+                            Real-Time Annotation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Hybrid Meeting & Presentation -->
+            <div class="usecase-card">
+                <div class="card-header">
+                    <img src="{{ asset('images/UseCase/IWB/hybird.png') }}" alt="Hybrid">
+                    <h3>Hybrid Meeting & Presentation</h3>
+                </div>
+                <div class="card-content">
+                    <p>Mendukung meeting hybrid dengan integrasi kamera, audio system, dan cloud collaboration platform.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <img src="{{ asset('images/UseCase/IWB/check.png') }}" alt="check">
+                            Seamless Remote Collaboration
+                        </li>
+                        <li>
+                            <img src="{{ asset('images/UseCase/IWB/check.png') }}" alt="check">
+                            Better Meeting Engagement
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Training & Education -->
+            <div class="usecase-card">
+                <div class="card-header">
+                    <img src="{{ asset('images/UseCase/IWB/training.png') }}" alt="Training">
+                    <h3>Training & Education</h3>
+                </div>
+                <div class="card-content">
+                    <p>Mempermudah sesi training dan pembelajaran melalui visualisasi materi yang interaktif dan mudah dipahami.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <img src="{{ asset('images/UseCase/IWB/check.png') }}" alt="check">
+                            Interactive Learning Experience
+                        </li>
+                        <li>
+                            <img src="{{ asset('images/UseCase/IWB/check.png') }}" alt="check">
+                            Better Knowledge Retention
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- BOTTOM IMAGE - image6.png -->
+    <section class="iwb-bottom-image">
+        <img src="{{ asset('images/UseCase/IWB/image6.png') }}" alt="Interactive Whiteboard Bottom">
+    </section>
+
+    <!-- FEATURES - TEKS SEJAJAR DENGAN LOGO -->
     <section class="iwb-features">
         <div class="iwb-features-grid">
 
             <div class="iwb-feature-card">
                 <div class="feature-header">
                     <img src="{{ asset('images/UseCase/IWB/image7.png') }}">
-                    <h4>Reduce Meeting Preparation Time</h4>
+                    <h4>Reduce Meeting<br>Preparation Time</h4>
                 </div>
                 <div class="feature-description">
                     <p>
@@ -309,7 +477,7 @@
             <div class="iwb-feature-card">
                 <div class="feature-header">
                     <img src="{{ asset('images/UseCase/IWB/image8.png') }}">
-                    <h4>Improve Team Collaboration</h4>
+                    <h4>Improve Team<br>Collaboration</h4>
                 </div>
                 <div class="feature-description">
                     <p>
@@ -321,7 +489,7 @@
             <div class="iwb-feature-card">
                 <div class="feature-header">
                     <img src="{{ asset('images/UseCase/IWB/image9.png') }}">
-                    <h4>Seamless Digital Integration</h4>
+                    <h4>Seamless Digital<br>Integration</h4>
                 </div>
                 <div class="feature-description">
                     <p>

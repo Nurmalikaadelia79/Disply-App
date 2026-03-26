@@ -33,7 +33,7 @@
     }
 
     .about-content h1 {
-        font-size: 45px; /* DARI 36px KE 40px */
+        font-size: 44px; /* DARI 36px KE 40px */
         line-height: 1.3;
         margin-bottom: 16px;
         font-weight: 700;
@@ -41,7 +41,7 @@
     }
 
     .about-content p {
-        font-size: 25px; /* DARI 16px KE 18px */
+        font-size: 22px; /* DARI 16px KE 18px */
         line-height: 1.7;
         margin-bottom: 24px;
         color: #e6ecff;
@@ -81,19 +81,6 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
-
-
-    @media (max-width: 768px) {
-        .about-hero {
-            height: auto;
-            padding: 40px 24px;
-        }
-
-        .about-content h1 {
-            font-size: 32px;
-        }
-    }
-
     /* =========================
    SMART KIOSK SECTION
 ========================= */
@@ -154,33 +141,6 @@
     display: block;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-    .kiosk-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .kiosk-image img {
-        margin: auto;
-    }
-
-    .kiosk-text p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .kiosk-features {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .kiosk-features {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* =========================
    KIOSK FEATURE IMAGE ONLY
@@ -228,13 +188,7 @@
     display: block;
 }
 
-/* Responsive untuk layout 2 kolom */
-@media (max-width: 768px) {
-    .kiosk-feature-images {
-        grid-template-columns: 1fr; /* DI MOBILE JADI 1 KOLOM */
-        gap: 30px;
-    }
-}
+
 
 /* =========================
    KIOSK USAGE IMAGE ONLY
@@ -292,21 +246,7 @@
     margin-left: auto;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-    .kiosk-usage-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
 
-    .kiosk-usage-display img {
-        margin: 40px auto 0;
-    }
-
-    .kiosk-usage-icons {
-        justify-items: center;
-    }
-}
 
 /* =========================
    PRODUCT SPEC SECTION
@@ -395,35 +335,182 @@
     cursor: pointer;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .product-spec-container h2 {
-        font-size: 28px; /* DARI 22px KE 28px */
-    }
+/* ================= FIX NAVBAR & LAYOUT ================= */
 
-    .product-switch {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .product-switch button {
-        font-size: 13px; /* DARI 12px KE 13px */
-        padding: 9px 18px; /* DARI 7px 16px KE 9px 18px */
-    }
-
-    .product-spec-image-wrapper {
-        max-width: 100%;
-    }
-    
-    .kiosk-usage-title {
-        font-size: 32px;
-    }
-    
-    .kiosk-feature-container .main-title {
-        font-size: 28px;
-    }
+/* HILANGIN SPACE KANAN */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
+/* NAVBAR IKUT SCROLL (TARGET YANG BENAR) */
+nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background: linear-gradient(to bottom, white, #eef3ff);
+}
+
+/* KONTEN TURUN BIAR GA KETUTUP NAVBAR */
+.content-area {
+    margin-top: 90px;
+}
+
+/* SEMUA SECTION FULL WIDTH & AMAN */
+section,
+.about-hero,
+.kiosk-section,
+.kiosk-feature-section,
+.kiosk-usage-section,
+.product-spec-section {
+    width: 100%;
+}
+
+/* IMAGE AMAN */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ===============================
+   RESPONSIVE FIX (TAMBAHAN SAJA)
+================================ */
+
+/* TABLET */
+@media (max-width:1024px){
+
+.kiosk-content{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+}
+
+.kiosk-image img{
+    margin:auto;
+    max-width:340px;
+}
+
+.kiosk-text p{
+    margin:auto;
+}
+
+.kiosk-features{
+    grid-template-columns:repeat(2,1fr);
+    justify-items:center;
+}
+
+.kiosk-feature-images{
+    grid-template-columns:1fr;
+}
+
+.kiosk-usage-content{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+}
+
+.kiosk-usage-display img{
+    margin:auto;
+}
+
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+.about-hero{
+    height:auto;
+    padding:120px 24px 60px;
+}
+
+.about-content h1{
+    font-size:32px;
+}
+
+.about-content p{
+    font-size:18px;
+}
+
+.kiosk-text h2{
+    font-size:28px;
+}
+
+.kiosk-usage-title{
+    font-size:28px;
+}
+
+.product-spec-container h2{
+    font-size:26px;
+}
+
+.product-switch{
+    flex-direction:column;
+    align-items:center;
+}
+
+.product-switch button{
+    width:100%;
+    max-width:320px;
+}
+
+.kiosk-features{
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.kiosk-usage-icons{
+    grid-template-columns:1fr;
+    justify-items:center;
+}
+
+.kiosk-usage-icons img{
+    max-width:220px;
+}
+
+}
+
+/* SMALL MOBILE */
+@media (max-width:480px){
+
+.about-content h1{
+    font-size:26px;
+}
+
+.about-content p{
+    font-size:16px;
+}
+
+.btn-demo{
+    padding:12px 26px;
+    font-size:14px;
+}
+
+.kiosk-text h2{
+    font-size:24px;
+}
+
+.kiosk-feature-container .main-title{
+    font-size:24px;
+}
+
+.kiosk-usage-title{
+    font-size:24px;
+}
+
+.product-spec-image-wrapper{
+    padding:0 10px;
+}
+
+.download-pdf-area{
+    width:140px;
+    height:36px;
+}
+
+}
 </style>
 
 <section class="about-hero">

@@ -10,7 +10,7 @@
     background: #f5f6f8;
 }
 
-/* HERO SECTION */
+/* ================= HERO ================= */
 .signage-hero {
     position: relative;
     height: 550px;
@@ -21,18 +21,13 @@
     align-items: center;
     padding: 0 100px;
     color: #fff;
-    position: relative;
 }
-
+ 
 .signage-hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
 }
 
 .signage-hero-content {
@@ -43,20 +38,22 @@
 
 .signage-hero h1 {
     font-size: 41px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .signage-hero p {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    color: #ffffff;
 }
 
-/* SECTION 2 */
+/* ================= SECTION 2 ================= */
 .signage-section {
     padding: 100px 20px;
     text-align: center;
@@ -65,8 +62,9 @@
 
 .signage-section h2 {
     font-size: 42px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 20px;
+    color: #000;
 }
 
 .signage-section h2 span {
@@ -84,11 +82,11 @@
     max-width: 1000px;
     margin: 0 auto 50px;
     font-size: 20px;
-    color: #444;
+    color: #000;
     line-height: 1.7;
 }
 
-/* IMAGE CONTENT */
+/* IMAGE */
 .signage-image {
     max-width: 1200px;
     margin: 0 auto;
@@ -99,7 +97,7 @@
     border-radius: 8px;
 }
 
-/* SECTION 3 */
+/* ================= SECTION 3 ================= */
 .signage-bottom {
     padding: 80px 20px 60px;
     text-align: center;
@@ -108,7 +106,7 @@
 
 .signage-bottom h3 {
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 700;
     color: #2448C3;
     margin-bottom: 20px;
 }
@@ -117,17 +115,17 @@
     max-width: 900px;
     margin: auto;
     font-size: 20px;
-    color: #444;
+    color: #000;
     line-height: 1.7;
 }
 
-/* IMAGE SHOWCASE */
-.signage-showcase {
+/* ================= USE CASE CARDS ================= */
+.signage-usecase {
     background: #f5f6f8;
-    padding: 40px 20px 120px;
+    padding: 40px 20px 40px;
 }
 
-.signage-showcase-grid {
+.signage-usecase-grid {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
@@ -135,50 +133,35 @@
     gap: 30px;
 }
 
-.signage-showcase-grid img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
+.usecase-card {
+    background: url('{{ asset('images/UseCase/DigitalSignage/card.png') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
-.signage-showcase-grid img.full-width {
-    grid-column: span 3;
+.usecase-card:hover {
+    transform: translateY(-5px);
 }
 
-/* FEATURE BENEFITS */
-.signage-features {
-    background: #eef2fb;
-    padding: 100px 20px;
-}
-
-.signage-features-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-}
-
-.signage-feature-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.feature-header {
+.card-header {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.feature-header img {
-    width: 56px;
-    height: 56px;
-    flex-shrink: 0;
+.card-header img {
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
-.feature-header h4 {
+.card-header h3 {
     font-size: 24px;
     font-weight: 700;
     color: #2448C3;
@@ -186,34 +169,118 @@
     line-height: 1.3;
 }
 
-.feature-description p {
+.card-content p {
     font-size: 18px;
-    color: #555;
-    line-height: 1.7;
-    margin: 0 0 0 76px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 400;
+    max-width: 100%;
 }
 
-/* RESPONSIVE */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 500;
+}
+
+.feature-list li img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ================= BOTTOM IMAGE ================= */
+.signage-bottom-image {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+    background: #f5f6f8;
+}
+
+.signage-bottom-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ================= FEATURES ================= */
+.signage-features {
+    background: #eef2fb;
+    padding: 80px 20px 110px;
+}
+
+.signage-features-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.signage-feature-card {
+    background: transparent;
+    border-radius: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.feature-header img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.feature-header h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2448C3;
+    line-height: 1.3;
+    margin: 0;
+    text-align: left;
+}
+
+.feature-description {
+    width: 100%;
+}
+
+.feature-description p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-    .signage-hero h1 {
-        font-size: 42px;
-    }
-    
-    .signage-hero p {
-        font-size: 19px;
-    }
-    
-    .signage-section h2 {
-        font-size: 38px;
-    }
-    
-    .feature-header h4 {
-        font-size: 22px;
-    }
-    
-    .feature-description p {
-        font-size: 17px;
-    }
+    .signage-hero h1 { font-size: 38px; }
+    .signage-hero p { font-size: 20px; }
+    .signage-section h2 { font-size: 36px; }
 }
 
 @media (max-width: 768px) {
@@ -222,65 +289,52 @@
         height: 450px;
     }
 
-    .signage-hero h1 {
-        font-size: 32px;
-    }
-    
-    .signage-hero p {
-        font-size: 18px;
-    }
+    .signage-hero h1 { font-size: 30px; }
+    .signage-hero p { font-size: 18px; }
 
-    .signage-section h2 {
-        font-size: 32px;
-    }
-    
+    .signage-section h2 { font-size: 30px; }
     .signage-section h3,
-    .signage-bottom h3 {
-        font-size: 24px;
-    }
-    
+    .signage-bottom h3 { font-size: 22px; }
+
     .signage-section p,
-    .signage-bottom p {
-        font-size: 18px;
-    }
-    
-    .signage-showcase-grid {
+    .signage-bottom p { font-size: 18px; }
+
+    .signage-usecase-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
 
-    .signage-showcase-grid img.full-width {
-        grid-column: span 1;
-    }
-    
     .signage-features-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    .feature-header h4 {
-        font-size: 22px;
-    }
-    
-    .feature-description p {
-        font-size: 17px;
-        margin-left: 0;
+    .feature-header {
+        gap: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .signage-hero h1 {
-        font-size: 28px;
+    .signage-hero h1 { font-size: 26px; }
+    .signage-hero p { font-size: 16px; }
+    
+    .usecase-card {
+        padding: 30px 20px;
     }
     
-    .signage-hero p {
-        font-size: 16px;
+    .card-header {
+        flex-direction: column;
+        text-align: center;
     }
     
     .feature-header {
         flex-direction: column;
         text-align: center;
-        gap: 12px;
+        gap: 10px;
+    }
+    
+    .feature-header h4 {
+        text-align: center;
     }
     
     .feature-description p {
@@ -305,7 +359,7 @@
         </div>
     </section>
 
-    <!-- DIGITAL SIGNAGE SOLUTIONS -->
+    <!-- SECTION 2 -->
     <section class="signage-section">
         <h2><span>DIGITAL SIGNAGE</span> SOLUTIONS</h2>
         <h3>Designed for Dynamic Information & Visual Communication</h3>
@@ -319,7 +373,7 @@
         </div>
     </section>
 
-    <!-- WHERE DIGITAL SIGNAGE WORKS BEST -->
+    <!-- SECTION 3 -->
     <section class="signage-bottom">
         <h3>WHERE DIGITAL SIGNAGE WORKS BEST</h3>
         <p>
@@ -327,57 +381,118 @@
             menyampaikan informasi, promosi, dan pengalaman pengunjung.
         </p>
     </section>
-    
-    <!-- IMAGE SHOWCASE -->
-    <section class="signage-showcase">
-        <div class="signage-showcase-grid">
-            <img src="{{ asset('images/UseCase/DigitalSignage/image3.png') }}" alt="Signage 3">
-            <img src="{{ asset('images/UseCase/DigitalSignage/image4.png') }}" alt="Signage 4">
-            <img src="{{ asset('images/UseCase/DigitalSignage/image5.png') }}" alt="Signage 5">
 
-            <img src="{{ asset('images/UseCase/DigitalSignage/image6.png') }}" alt="Signage 6" class="full-width">
+    <!-- USE CASE CARDS dengan background card.png -->
+    <section class="signage-usecase">
+        <div class="signage-usecase-grid">
+            
+            <!-- Card 1: Information Display -->
+            <div class="usecase-card">
+                <div class="card-header">
+                    <img src="{{ asset('images/UseCase/DigitalSignage/information.png') }}" alt="Information">
+                    <h3>Information Display</h3>
+                </div>
+                <div class="card-content">
+                    <p>Menyampaikan informasi operasional, jadwal layanan, atau pengumuman secara real-time.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <img src="{{ asset('images/UseCase/DigitalSignage/check.png') }}" alt="check">
+                            Real-Time Updates
+                        </li>
+                        <li>
+                            <img src="{{ asset('images/UseCase/DigitalSignage/check.png') }}" alt="check">
+                            Clear Communication
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Promotion & Advertising -->
+            <div class="usecase-card">
+                <div class="card-header">
+                    <img src="{{ asset('images/UseCase/DigitalSignage/promotion.png') }}" alt="Promotion">
+                    <h3>Promotion & Advertising</h3>
+                </div>
+                <div class="card-content">
+                    <p>Menampilkan promosi produk atau layanan dengan visual yang lebih menarik dan dinamis.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <img src="{{ asset('images/UseCase/DigitalSignage/check.png') }}" alt="check">
+                            Increased Engagement
+                        </li>
+                        <li>
+                            <img src="{{ asset('images/UseCase/DigitalSignage/check.png') }}" alt="check">
+                            Better Brand Exposure
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Queue & Wayfinding Support -->
+            <div class="usecase-card">
+                <div class="card-header">
+                    <img src="{{ asset('images/UseCase/DigitalSignage/queue.png') }}" alt="Queue">
+                    <h3>Queue & Wayfinding Support</h3>
+                </div>
+                <div class="card-content">
+                    <p>Membantu pengunjung memahami alur layanan dan navigasi area dengan lebih jelas.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <img src="{{ asset('images/UseCase/DigitalSignage/check.png') }}" alt="check">
+                            Better Security Control
+                        </li>
+                        <li>
+                            <img src="{{ asset('images/UseCase/DigitalSignage/check.png') }}" alt="check">
+                            Efficient Reception Process
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- FEATURE BENEFITS -->
+    <!-- BOTTOM IMAGE - image6.png -->
+    <section class="signage-bottom-image">
+        <img src="{{ asset('images/UseCase/DigitalSignage/image6.png') }}" alt="Digital Signage Bottom">
+    </section>
+
+    <!-- FEATURES -->
     <section class="signage-features">
         <div class="signage-features-grid">
 
             <div class="signage-feature-card">
                 <div class="feature-header">
-                    <img src="{{ asset('images/UseCase/DigitalSignage/image7.png') }}" alt="Real-time Updates">
+                    <img src="{{ asset('images/UseCase/DigitalSignage/image7.png') }}">
                     <h4>Centralized Content Management</h4>
                 </div>
                 <div class="feature-description">
                     <p>
-                       Kelola seluruh konten display dari <br>
-                       satu dashboard terpusat.
+                        Kelola seluruh konten display dari satu dashboard terpusat.
                     </p>
                 </div>
             </div>
 
             <div class="signage-feature-card">
                 <div class="feature-header">
-                    <img src="{{ asset('images/UseCase/DigitalSignage/image8.png') }}" alt="Eye-catching Visuals">
+                    <img src="{{ asset('images/UseCase/DigitalSignage/image8.png') }}">
                     <h4>Increase Audience Engagement</h4>
                 </div>
                 <div class="feature-description">
                     <p>
-                        Visual dinamis meningkatkan<br>
-                         perhatian dan interaksi audiens.
+                        Visual dinamis meningkatkan perhatian dan interaksi audiens.
                     </p>
                 </div>
             </div>
 
             <div class="signage-feature-card">
                 <div class="feature-header">
-                    <img src="{{ asset('images/UseCase/DigitalSignage/image9.png') }}" alt="Centralized Management">
+                    <img src="{{ asset('images/UseCase/DigitalSignage/image9.png') }}">
                     <h4>Flexible Content Scheduling</h4>
                 </div>
                 <div class="feature-description">
                     <p>
-                        Atur jadwal konten sesuai kebutuhan <br>
-                        operasional dan promosi.
+                        Atur jadwal konten sesuai kebutuhan operasional dan promosi.
                     </p>
                 </div>
             </div>

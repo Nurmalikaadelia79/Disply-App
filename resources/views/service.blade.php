@@ -149,69 +149,76 @@
     }
 
     /* WHY DISPLY SECTION - JUDUL DI ATAS! */
-    .why-disply-section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px 60px 20px; /* ATAS: 40px (dari 50px), BAWAH: 60px (dari 80px) */
-    }
+/* =====================================
+   WHY DISPLY SECTION - JUDUL DI ATAS
+===================================== */
 
-    /* JUDUL DI TENGAH ATAS */
-    .why-disply-title {
-        font-size: 42px;
-        font-weight: 700;
-        color: #000; /* HITAM */
-        text-align: center;
-        margin-bottom: 40px !important; /* DIKURANGI dari 50px */
-    }
+.why-disply-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+}
 
-    .why-disply-title span {
-        color: #1B4DFF; /* BIRU DISPLY */
-    }
+/* JUDUL */
+.why-disply-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    margin-bottom: 45px;
+}
 
-    /* CONTENT TANPA JUDUL LAGI */
-    .why-disply-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 50px; /* DIKURANGI dari 60px */
-    }
+.why-disply-title span {
+    color: #1B4DFF;
+}
 
-    /* GAMBAR BESAR DI KIRI - DIPERBESAR */
-    .why-disply-image {
-        flex: 0 0 60%; /* Diperbesar dari 55% menjadi 60% */
-    }
+/* WRAPPER */
+.why-disply-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
 
-    .why-disply-image img {
-        width: 100%;
-        max-width: 680px; /* Diperbesar dari 620px menjadi 680px */
-        border-radius: 10px;
-    }
+/* GAMBAR */
+.why-disply-image {
+    flex: 0 0 55%;
+}
 
-    /* TEKS DI KANAN - DIPERBESAR */
-    .why-disply-list-container {
-        flex: 0 0 40%;
-    }
+.why-disply-image img {
+    width: 100%;
+    max-width: 680px;
+    border-radius: 10px;
+}
 
-    .why-disply-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 20px; /* DIKURANGI dari 25px */
-    }
+/* CONTAINER TEKS */
+.why-disply-list-container {
+    flex: 0 0 45%;
+}
 
-    .why-disply-icon {
-        width: 40px !important; /* Diperbesar dari 36px menjadi 40px */
-        height: 40px !important; /* Diperbesar dari 36px menjadi 40px */
-        flex-shrink: 0;
-        margin-top: 5px;
-    }
+/* ITEM (ICON + TEKS) */
+.why-disply-item {
+    display: flex;
+    align-items: center; /* icon dan teks center */
+    gap: 48px; /* jarak icon dan teks */
+    margin-bottom: 24px;
+}
 
-    .why-disply-text {
-        font-size: 24px; /* Diperbesar dari 22px menjadi 24px */
-        font-weight: 500;
-        line-height: 1.6; /* DIKURANGI dari 1.7 */
-        max-width: 450px; /* Diperbesar dari 420px menjadi 450px */
-    }
+/* ICON */
+.why-disply-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+}
+
+/* TEKS */
+.why-disply-text {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 520px;
+    color: #1A1A1A;
+}
 
     /* RESPONSIVE BREAKPOINTS */
     @media(max-width: 1100px) {
